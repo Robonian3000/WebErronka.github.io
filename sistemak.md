@@ -38,10 +38,10 @@ Proiekturako **VMware Workstation** birtualizazio-ingurunea erabili da. Sare-kom
 
 ![Sare Moldagailua](./Argazkiak%20Sistemas/1%20-%20Adaptadorea%20aldatu.png)
 
-Windows Server sisteman IP helbideratze estikoa ezarri da gure gelako sare-azpiegiturarekin bat etor dadin:
+Windows Server sisteman IP helbideratze estatikoa ezarri da gure gelako sare-azpiegiturarekin bat etor dadin:
 * **IP helbidea:** `192.168.70.9`
 * **Azpisare-maskara:** `255.255.255.0`
-* **Atebidea (Gateway):** `192.168.70.1`
+* **Atebidea (Gateway):** `192.168.70.254`
 
 ![IP Konfigurazioa](./Argazkiak%20Sistemas/2%20-%20IP%20konfig.png)
 
@@ -53,7 +53,7 @@ Sistemaren biltegiratze-ahalmena eta RAID egiturak prestatu ahal izateko, makina
 ### 2.3. Eguneraketak eta Berreskuratze-teknikak (Snapshot)
 Sistemaren osotasuna eta segurtasuna bermatzeko:
 1. **Windows Update:** Eguneraketa guztiak egiaztatu eta instalatu dira.
-2. **Instantánea (Snapshot):** VMware bidez berreskuratze-puntu garbi bat sortu da (*Punto Limpio - Sistema eta Diskoak Preparados*), akatsik balego sistema egoera egonkorrera berehala itzuli ahal izateko.
+2. **Instantánea (Snapshot):** VMware bidez berreskuratze-puntu garbi bat sortu da, akatsik balego sistema egoera egonkorrera berehala itzuli ahal izateko.
 
 | Windows Update Eguneraketak | Berreskuratze Snapshot-a |
 | :---: | :---: |
@@ -111,7 +111,7 @@ Datu-bolumenean `Enpresa_Datuak` karpeta sortu da eta herentzia desgaitu ondoren
 ### 4.1. Bolumen Sinpleak, Banatuak (Spanned) eta Disko Kuotak
 Diskoen kudeaketa aurreratua erakusteko, hainbat bolumen mota sortu dira:
 * **Bolumen Sinplea (`E:`):** Disco 1 erabiliz.
-* **Bolumen Banatua / Distribuido (`F:`):** Disco 2 eta Disco 3 (disko dinamikoak) elkartuz sortutako **20 GB-ko bolumen bateratua** (kolore mororea).
+* **Bolumen Banatua / Distribuido (`F:`):** Disco 2 eta Disco 3 (disko dinamikoak) elkartuz sortutako **20 GB-ko bolumen bateratua** (kolore morea).
 * **Disko-kuotak:** Erabiltzaile bakoitzak har dezakeen espazioa mugatzeko kuotak aktibatu dira:
   * Espazio-muga: **2 GB**.
   * Abisu-maila: **1,5 GB**.
