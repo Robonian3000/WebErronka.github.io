@@ -1,11 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Zerbitzaria — 4. Taldea</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #333;
+        }
+        .main-title {
+            color: darkolivegreen;
+            border-bottom: 3px solid darkolivegreen;
+            padding-bottom: 10px;
+        }
+        .intro-box {
+            background-color: #f4f6f0;
+            border-left: 5px solid darkolivegreen;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+        }
+        .card ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+        .badge-raid {
+            background-color: #2980b9;
+            color: white;
+            font-size: 0.85rem;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .status-ok {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <!-- Nabigazio Menua (Hector-en egitura) -->
+    <div class="container header">
+        <a href="sarrera.html"><div>Sarrera</div></a>
+        <a href="Datu-base.html"><div>Datu base</div></a>
+        <a href="Digitalizazioa.html"><div>Digitalizazioa</div></a>
+        <a href="Sarea.html"><div>Sarea</div></a>
+        <a href="zerbitzaria.html"><div>Zerbitzaria</div></a>
+    </div>
+
+    <!-- Zerbitzariaren Edukia -->
+    <div class="content">
+        <h1 class="main-title">Sistema Eragileen Ezartzea: Enpresaren Zerbitzaria</h1>
+        
+        <div class="intro-box">
+            <p>Enpresaren azpiegitura informatikoari eta webgune korporatiboari euskarria emateko, <strong>Windows Server</strong> zerbitzari zentral bat hedatu da VMware birtualizazio-ingurunean. Webgune osoa akatsei tolerantzia dion biltegiratze-bolumen batean ostatuta dago.</p>
+        </div>
+
+        <div class="card-grid">
+            <!-- 1. Txartela: Sare eta Sistema Datuak -->
+            <div class="card">
+                <h3>🖥️ Zerbitzaria eta Sarea</h3>
+                <ul>
+                    <li><strong>Sistema Eragilea:</strong> Windows Server (GUI)</li>
+                    <li><strong>Sare Modua:</strong> Bridged (Zubi moduan Realtek txartelera)</li>
+                    <li><strong>IP Helbidea:</strong> <code>192.168.70.9</code> (Estatikoa)</li>
+                    <li><strong>Maskara:</strong> <code>255.255.255.0</code></li>
+                    <li><strong>Web Zerbitzaria:</strong> IIS (Internet Information Services)</li>
+                    <li><strong>Egoera:</strong> <span class="status-ok">● Martxan eta atzigarri</span></li>
+                </ul>
+            </div>
+
+            <!-- 2. Txartela: Biltegiratzea eta RAID -->
+            <div class="card">
+                <h3>💾 Biltegiratzea eta RAID</h3>
+                <ul>
+                    <li><strong>Partizio-taula:</strong> GPT (Disko guztiak)</li>
+                    <li><strong>Bolumen Sinplea (E:):</strong> 10 GB (Disko-kuotekin)</li>
+                    <li><strong>Bolumen Banatua (F:):</strong> 20 GB (2 disko batuta)</li>
+                    <li><strong>RAID 1 Ispilua (G:):</strong> 10 GB (Datu bikoiztuak)</li>
+                    <li><strong>RAID 5 Paritatea (H:):</strong> 20 GB <span class="badge-raid">Webgunea Hemen</span></li>
+                    <li><em>Webgunearen bide fisikoa:</em> <code>H:\Web_Enpresa</code></li>
+                </ul>
+            </div>
+
+            <!-- 3. Txartela: Segurtasun Politikak -->
+            <div class="card">
+                <h3>🔒 Segurtasuna eta Baimenak</h3>
+                <ul>
+                    <li><strong>Pasahitz Politika:</strong> Konplexutasuna aktibatuta eta gutxienez 8 karaktere</li>
+                    <li><strong>Kontu Blokeoa:</strong> 3 saiakera okerren ostean automatikoki blokeatuta</li>
+                    <li><strong>Taldeak:</strong> <code>G_Teknikariak</code> eta <code>G_Langileak</code></li>
+                    <li><strong>NTFS Baimenak:</strong> Teknikariek Kontrol Osoa, Langileek Irakurketa soilik</li>
+                    <li><strong>Babeskopiak:</strong> Berreskuratze-puntua (Snapshot garbia) gordeta</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>SISA 1 — 1. Erronka | 4. Taldea: Telmo, Peru, Iñigo, Hector (Uni Eibar-Ermua)</p>
+        </footer>
+    </div>
+
 </body>
 </html>
