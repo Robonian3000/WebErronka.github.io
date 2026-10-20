@@ -11,28 +11,30 @@ main, .container {
     max-width:1000px; 
     margin:40px auto; 
     padding:0 16px; 
+    color: white;
 }
 
 header { 
     background:dar; 
-    border-bottom:1px solid darkolivegreen; 
+    border-bottom:1px solid rgb(155, 41, 41); 
 }
 
 
 h1 { 
-    color:grey; margin:0 0 10px; font-size:28px; 
+    color:white; margin:0 0 10px; font-size:28px; 
+    text-align: center;
 }
 h2 { 
-    color: grey; margin:14px 0 8px; font-size:22px; 
+    color: white; margin:14px 0 8px; font-size:22px; 
 }
 h3 { 
-    color: grey; margin:12px 0 6px; font-size:18px; 
+    color: white; margin:12px 0 6px; font-size:18px; 
 }
 
 .container.header {
     display: flex;
     align-items: center;
-    background-color: darkolivegreen;
+    background-color: rgb(155, 41, 41);
     padding: 12px 20px;
     max-width: 1000px;
     margin: 40px auto;
@@ -58,3 +60,82 @@ h3 {
     transition: background-color 0.3s;
 }
 
+
+.zona-carrusel {
+    width: 90%;
+    max-width: 1000px;
+    height: 400px;
+    margin: 45px auto;
+    background-image: url("argazkiak/cinta_de_pelicula.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-carrusel {
+    width: 700px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.carrusel {
+    display: flex;
+    width: 166.6667%;
+    height: 100%;
+    animation: deslizar 15s infinite;
+}
+
+.carrusel img {
+    width: 20%;
+    height: 100%;
+    flex: 0 0 20%;
+    object-fit: contain;
+    padding: 5px;
+    box-sizing: border-box;
+    border:#222
+}
+
+@keyframes deslizar {
+    0%, 20% {
+        transform: translateX(0);
+    }
+
+    25%, 45% {
+        transform: translateX(-20%);
+    }
+
+    50%, 70% {
+        transform: translateX(-40%);
+    }
+
+    75%, 95% {
+        transform: translateX(-60%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+body {
+    background-color: black;
+
+    background-image:
+        url("argazkiak/cortina_izquierda.jpg"),
+        url("argazkiak/cortina_derecha.jpg");
+
+    background-position:
+        left top,
+        right top;
+
+    background-repeat:
+        repeat-y,
+        repeat-y;
+
+    background-size:
+        14vw 100vh,
+        14vw 100vh;
+}
