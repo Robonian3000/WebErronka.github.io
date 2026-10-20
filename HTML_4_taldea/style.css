@@ -14,8 +14,8 @@ main, .container {
 }
 
 header { 
-    background:#fff; 
-    border-bottom:1px solid #e2e8f0; 
+    background:dar; 
+    border-bottom:1px solid darkolivegreen; 
 }
 
 
@@ -29,14 +29,22 @@ h3 {
     color: grey; margin:12px 0 6px; font-size:18px; 
 }
 
-.container.header{
+.container.header {
     display: flex;
-    justify-content: right;
-    align-items:center; 
-    justify-content:space-between; 
+    align-items: center;
     background-color: darkolivegreen;
-    gap:12px;
+    padding: 12px 20px;
+    max-width: 1000px;
+    margin: 40px auto;
 }
+
+.container.header h1 {
+    margin: 0;
+    margin-right: auto;
+    color: white;
+    font-size: 24px;
+}
+
 .container div {
   background-color: #fdfdfd;
   margin: 10px;
@@ -47,7 +55,6 @@ h3 {
 }
 .container div:hover {
     background-color: rgb(202, 200, 198);
+    transition: background-color 0.3s;
 }
-.container .header h1 {
-    justify-content: left;
-}
+
