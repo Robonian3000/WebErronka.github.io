@@ -1,6 +1,7 @@
 # 3. Sistema Eragileen Ezartzea (SISA 1 — 1. Erronka)
 
 **Egilea:** Iñigo (4. Taldea)  
+**Zerbitzariaren Izena (Hostname):** `Artaburu`  
 **Sistema Eragilea:** Windows Server  
 **IP Helbidea:** `192.168.70.9`  
 **Web Zerbitzaria:** Internet Information Services (IIS) — RAID 5 biltegiratzean kokatua  
@@ -33,27 +34,30 @@ Sistema eragile baten barne-arkitektura elkarrekin koordinatutako hainbat modulu
 
 ## 2. IE1: Sistema Eragilearen Instalazioa, Sarea eta Eguneraketak
 
-### 2.1. Makina Birtuala eta Sarearen Konfigurazioa
+### 2.1. Makina Birtuala, Ekipoaren Izena eta Sarearen Konfigurazioa
 Proiekturako **VMware Workstation** birtualizazio-ingurunea erabili da. Sare-komunikazioa bermatzeko, sare-moldagailua **Bridged (Zubi)** moduan konfiguratu da, fisikoki konektatutako Realtek sare-txartelari zuzenean lotuz.
 
 ![Sare Moldagailua](./Argazkiak%20Sistemas/1%20-%20Adaptadorea%20aldatu.png)
 
-Windows Server sisteman IP helbideratze estatikoa ezarri da gure gelako sare-azpiegiturarekin bat etor dadin:
+Rúbrikaren jarraibideak jarraituz, ekipoari **`Artaburu`** izen ofiziala ezarri zaio eta IP helbideratze estatikoa konfiguratu da:
+* **Ekipoaren izena (Hostname):** `Artaburu`
 * **IP helbidea:** `192.168.70.9`
 * **Azpisare-maskara:** `255.255.255.0`
-* **Atebidea (Gateway):** `192.168.70.254`
+* **Atebidea (Gateway):** `192.168.70.1`
 
-![IP Konfigurazioa](./Argazkiak%20Sistemas/2%20-%20IP%20konfig.png)
+| Ekipoaren Izena (Artaburu) | IP Konfigurazioa |
+| :---: | :---: |
+| ![Ekipoaren Izena](./Argazkiak%20Sistemas/1.5%20-%20Ekipoaren%20izena.png) | ![IP Konfigurazioa](./Argazkiak%20Sistemas/2%20-%20IP%20konfig.png) |
 
 ### 2.2. Disko Gehigarriak Gehitzea (GPT)
-Sistemaren biltegiratze-ahalmena eta RAID egiturak prestatu ahal izateko, makinari **10 GB-ko 7 disko birtual gehigarri** gehitu zaizkio SCSI kontrolatzailearen bidez, eta guztiak **GPT (GUID Partition Table)** partizio-taula modernoan hasieratu dira.
+Sistemaren biltegiratze-ahalmena eta RAID egiturak prestatu ahal izateko, makinari **10 GB-ko disko birtual gehigarriak** gehitu zaizkio SCSI kontrolatzailearen bidez, eta guztiak **GPT (GUID Partition Table)** partizio-taula modernoan hasieratu dira.
 
 ![Diskoak Gehitu](./Argazkiak%20Sistemas/4%20-%20Diskoak%20raidak%20egiteko.png)
 
 ### 2.3. Eguneraketak eta Berreskuratze-teknikak (Snapshot)
 Sistemaren osotasuna eta segurtasuna bermatzeko:
 1. **Windows Update:** Eguneraketa guztiak egiaztatu eta instalatu dira.
-2. **Instantánea (Snapshot):** VMware bidez berreskuratze-puntu garbi bat sortu da, akatsik balego sistema egoera egonkorrera berehala itzuli ahal izateko.
+2. **Instantánea (Snapshot):** VMware bidez berreskuratze-puntu garbi bat sortu da (*Punto Limpio - Sistema eta Diskoak Preparados*), akatsik balego sistema egoera egonkorrera berehala itzuli ahal izateko.
 
 | Windows Update Eguneraketak | Berreskuratze Snapshot-a |
 | :---: | :---: |
@@ -111,7 +115,7 @@ Datu-bolumenean `Enpresa_Datuak` karpeta sortu da eta herentzia desgaitu ondoren
 ### 4.1. Bolumen Sinpleak, Banatuak (Spanned) eta Disko Kuotak
 Diskoen kudeaketa aurreratua erakusteko, hainbat bolumen mota sortu dira:
 * **Bolumen Sinplea (`E:`):** Disco 1 erabiliz.
-* **Bolumen Banatua / Distribuido (`F:`):** Disco 2 eta Disco 3 (disko dinamikoak) elkartuz sortutako **20 GB-ko bolumen bateratua** (kolore morea).
+* **Bolumen Banatua / Distribuido (`F:`):** Disco 2 eta Disco 3 (disko dinamikoak) elkartuz sortutako **20 GB-ko bolumen bateratua** (kolore mororea).
 * **Disko-kuotak:** Erabiltzaile bakoitzak har dezakeen espazioa mugatzeko kuotak aktibatu dira:
   * Espazio-muga: **2 GB**.
   * Abisu-maila: **1,5 GB**.
@@ -137,18 +141,27 @@ Diskoen kudeaketa aurreratua erakusteko, hainbat bolumen mota sortu dira:
 
 ![RAID 5 Paritatea](./Argazkiak%20Sistemas/15%20-%20Raid%205.png)
 
+### 4.3. Babeskopia Automatikoak (Windows Server Backup)
+Sistemaren datuak babesteko eta hondamenen aurrean erantzuteko:
+1. **Ezaugarriaren instalazioa:** *Copias de seguridad de Windows Server* instalatu da zerbitzarian.
+2. **Kopia programatua:** Eguneroko babeskopia automatiko bat ezarri da gaueko orduetan, `Web_Enpresa` karpeta eta sistemaren egoera bolumen seguru batean gordetzeko.
+
+| Windows Server Backup Ezaugarria | Babeskopiaren Programazioa |
+| :---: | :---: |
+| ![Kopien Rola](./Argazkiak%20Sistemas/18%20-%20Kopien%20rola%20instalatu.png) | ![Babeskopia](./Argazkiak%20Sistemas/19%20-%20Segurtasun%20kopia.png) |
+
 ---
 
 ## 5. Ondorioak eta Hurrengo Urratsak (2. Astea)
 
 Lehen aste honetan (Urriak 19-23) planifikatutako helburu tekniko guztiak arrakastaz gainditu dira:
-* Sistema eragilea instalatuta, eguneratuta eta segurtatuta.
+* Zerbitzariaren izena (**`Artaburu`**) eta sarea konfiguratuta.
 * Erabiltzaile eta baimen-hierarkia operatiboa.
 * Biltegiratze-arkitektura osoa (sinplea, banatua, RAID 1 eta RAID 5) martxan.
 * IIS zerbitzaria saretik atzigarri RAID 5 bolumenean.
+* Babeskopia-plan automatizatua ezarrita Windows Server Backup bidez.
 
 **2. Asteko Zereginak (Urriak 26-30):**
-1. *Windows Server Backup* bidezko babeskopia-plan automatizatuak ezartzea.
-2. Hirugarrenen tresnekin (adib. Cobian Reflector) babeskopia automatikoak konfiguratzea.
-3. Disko-irudiak sortzea eta hondamenen aurreko berreskuratze-plana idaztea.
-4. Azken integrazioa eta proiektuaren aurkezpena.
+1. Hirugarrenen tresnekin (adib. Cobian Reflector) babeskopia gehigarriak konfiguratzea.
+2. Disko-irudiak sortzea eta hondamenen aurreko berreskuratze-plana garatzea.
+3. Azken integrazioa eta proiektuaren aurkezpena.
