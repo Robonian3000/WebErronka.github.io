@@ -3,96 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zerbitzaria — 4. Taldea</title>
+    <meta name="description" content="Artaburu zerbitzaria: Windows Server, RAID, segurtasuna eta IIS">
+    <title>Zerbitzaria | Artaburu Prime Video</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .content {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: #333;
-        }
-        .main-title {
-            color: rgb(155, 41, 41);
-            border-bottom: 3px solid rgb(155, 41, 41);
-            padding-bottom: 10px;
-        }
-        .intro-box {
-            background-color: #f4f6f0;
-            border-left: 5px solid rgb(155, 41, 41);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .card h3 {
-            margin-top: 0;
-            color: #2c3e50;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 8px;
-        }
-        .card ul {
-            padding-left: 20px;
-            line-height: 1.6;
-        }
-        .badge-raid {
-            background-color: #2980b9;
-            color: white;
-            font-size: 0.85rem;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-weight: bold;
-        }
-        .status-ok {
-            color: #27ae60;
-            font-weight: bold;
-        }
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #777;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
-    </style>
 </head>
 <body>
+    <a class="skip-link" href="#edukia">Joan edukira</a>
 
-    <!-- Nabigazio Menua (Hector-en egitura) -->
-    <div class="container header">
-        <a href="sarrera.html"><div>Sarrera</div></a>
-        <a href="Datu-base.html"><div>Datu base</div></a>
-        <a href="Digitalizazioa.html"><div>Digitalizazioa</div></a>
-        <a href="Sarea.html"><div>Sarea</div></a>
-        <a href="zerbitzaria.html"><div>Zerbitzaria</div></a>
-    </div>
-
-    <!-- Zerbitzariaren Edukia -->
-    <div class="content">
-        <h1 class="main-title">Sistema Eragileen Ezartzea: Enpresaren Zerbitzaria</h1>
-        
-        <div class="intro-box">
-            <p>Enpresaren azpiegitura informatikoari eta webgune korporatiboari euskarria emateko, <strong>Windows Server</strong> zerbitzari zentral bat hedatu da VMware birtualizazio-ingurunean. Webgune osoa akatsei tolerantzia dion biltegiratze-bolumen batean ostatuta dago.</p>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="sarrera.html">Artaburu <span>Prime Video</span></a>
+            <nav aria-label="Menu nagusia">
+                <ul class="nav-list">
+                    <li><a href="sarrera.html">Hasiera</a></li>
+                    <li><a href="Datu-base.html">Datu-basea</a></li>
+                    <li><a href="Sarea.html">Sareak</a></li>
+                    <li><a href="zerbitzaria.html" aria-current="page">Zerbitzaria</a></li>
+                    <li><a href="Digitalizazioa.html">Digitalizazioa</a></li>
+                    <li><a href="markatze_lengoaia.html">Markatze lengoaiak</a></li>
+                    <li><a class="nav-login" href="index.html">Saioa hasi</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <main id="edukia" class="page">
+        <h1 class="page-title">Sistema Eragileen Ezartzea: Enpresaren Zerbitzaria</h1>
+
+        <section class="intro-box">
+            <p>Enpresaren azpiegitura informatikoari eta webgune korporatiboari euskarria emateko, <strong>Windows Server</strong> zerbitzari zentral bat hedatu da VMware birtualizazio-ingurunean. Webgune osoa akatsei tolerantzia dion biltegiratze-bolumen batean ostatuta dago.</p>
+        </section>
 
         <div class="card-grid">
-            <!-- 1. Txartela: Sare eta Sistema Datuak -->
-            <div class="card">
-                <h3>🖥️ Zerbitzaria eta Sarea</h3>
+            <article class="card">
+                <h2>Zerbitzaria eta Sarea</h2>
                 <ul>
                     <li><strong>Zerbitzariaren Izena:</strong> <code>Artaburu</code></li>
                     <li><strong>Sistema Eragilea:</strong> Windows Server (GUI)</li>
@@ -100,26 +44,24 @@
                     <li><strong>IP Helbidea:</strong> <code>192.168.70.9</code> (Estatikoa)</li>
                     <li><strong>Maskara:</strong> <code>255.255.255.0</code></li>
                     <li><strong>Web Zerbitzaria:</strong> IIS (Internet Information Services)</li>
-                    <li><strong>Egoera:</strong> <span class="status-ok">● Martxan eta atzigarri</span></li>
+                    <li><strong>Egoera:</strong> <span class="status-ok">&#9679; Martxan eta atzigarri</span></li>
                 </ul>
-            </div>
+            </article>
 
-            <!-- 2. Txartela: Biltegiratzea eta RAID -->
-            <div class="card">
-                <h3>💾 Biltegiratzea eta RAID</h3>
+            <article class="card">
+                <h2>Biltegiratzea eta RAID</h2>
                 <ul>
                     <li><strong>Partizio-taula:</strong> GPT (Disko guztiak)</li>
                     <li><strong>Bolumen Sinplea (E:):</strong> 10 GB (Disko-kuotekin)</li>
                     <li><strong>Bolumen Banatua (F:):</strong> 20 GB (2 disko batuta)</li>
                     <li><strong>RAID 1 Ispilua (G:):</strong> 10 GB (Datu bikoiztuak)</li>
-                    <li><strong>RAID 5 Paritatea (H:):</strong> 20 GB <span class="badge-raid">Webgunea Hemen</span></li>
+                    <li><strong>RAID 5 Paritatea (H:):</strong> 20 GB <span class="badge">Webgunea Hemen</span></li>
                     <li><em>Webgunearen bide fisikoa:</em> <code>H:\Web_Enpresa</code></li>
                 </ul>
-            </div>
+            </article>
 
-            <!-- 3. Txartela: Segurtasun Politikak -->
-            <div class="card">
-                <h3>🔒 Segurtasuna eta Baimenak</h3>
+            <article class="card">
+                <h2>Segurtasuna eta Baimenak</h2>
                 <ul>
                     <li><strong>Pasahitz Politika:</strong> Konplexutasuna aktibatuta eta gutxienez 8 karaktere</li>
                     <li><strong>Kontu Blokeoa:</strong> 3 saiakera okerren ostean automatikoki blokeatuta</li>
@@ -127,13 +69,84 @@
                     <li><strong>NTFS Baimenak:</strong> Teknikariek Kontrol Osoa, Langileek Irakurketa soilik</li>
                     <li><strong>Babeskopiak:</strong> Berreskuratze-puntua (Snapshot garbia) gordeta</li>
                 </ul>
-            </div>
+            </article>
         </div>
 
-        <footer>
-            <p>SISA 1 — 1. Erronka | 4. Taldea: Telmo, Peru, Iñigo, Hector (Uni Eibar-Ermua)</p>
-        </footer>
-    </div>
+        <h2>Bolumenen laburpena</h2>
+        <div class="table-wrapper">
+            <table class="data-table">
+                <caption>Artaburu zerbitzariko datu-bolumenak</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Unitatea</th>
+                        <th scope="col">Mota</th>
+                        <th scope="col">Diskoak</th>
+                        <th scope="col">Tamaina</th>
+                        <th scope="col">Erabilera</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>E:</code></td>
+                        <td>Bolumen sinplea</td>
+                        <td>Disko 1</td>
+                        <td>10 GB</td>
+                        <td>Disko-kuotak</td>
+                    </tr>
+                    <tr>
+                        <td><code>F:</code></td>
+                        <td>Bolumen banatua</td>
+                        <td>Disko 2 + 3</td>
+                        <td>20 GB</td>
+                        <td>NTFS baimenak (<code>Enpresa_Datuak</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code>G:</code></td>
+                        <td>RAID 1 (ispilua)</td>
+                        <td>Disko 4 + 5</td>
+                        <td>10 GB</td>
+                        <td>Datu bikoiztuak</td>
+                    </tr>
+                    <tr>
+                        <td><code>H:</code></td>
+                        <td>RAID 5 (paritatea)</td>
+                        <td>Disko 6 + 7 + 8</td>
+                        <td>20 GB</td>
+                        <td>Webgunea (<code>H:\Web_Enpresa</code>)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
+        <h2>Babeskopiak eta disko-irudiak</h2>
+        <ul>
+            <li><strong>Windows Server Backup:</strong> eguneroko babeskopia programatua.</li>
+            <li><strong>Cobian Reflector:</strong> <code>H:\Web_Enpresa</code> karpetaren babeskopia diferentziala, Zip formatuan.</li>
+            <li><strong>Disk2vhd:</strong> disko-irudia <code>.vhdx</code> formatuan, Volume Shadow Copy erabiliz.</li>
+        </ul>
+
+        <p>Dokumentazio tekniko osoa (pantaila-argazkiekin): <a href="../Dokumentazioa/sistemak.html">Sistema eragileen dokumentazioa</a>.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <section>
+                <h2>Artaburu Prime Video</h2>
+                <p>Streaming eduki plataforma<br>SISA 1 &mdash; 1. Erronka</p>
+            </section>
+            <section>
+                <h2>Kontaktua</h2>
+                <address>
+                    Tel.: <a href="tel:+34684459018">684 45 90 18</a><br>
+                    Posta: <a href="mailto:vizcaino.hector@uni.eus">vizcaino.hector@uni.eus</a>
+                </address>
+            </section>
+            <section>
+                <h2>Taldea</h2>
+                <p>4. Taldea: Telmo, Peru, Iñigo, Hector<br>Uni Eibar-Ermua</p>
+            </section>
+        </div>
+        <p class="copyright">&copy; 2026 Artaburu Prime Video &mdash; 4. Taldea</p>
+    </footer>
 </body>
 </html>

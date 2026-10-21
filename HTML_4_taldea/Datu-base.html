@@ -1,11 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Artaburu Prime Video streaming plataformaren datu-basearen diseinua, E-R diagrama, 3FN normalizazioa eta Access inplementazioa">
+    <title>Datu-basea | Artaburu Prime Video</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <a class="skip-link" href="#edukia">Joan edukira</a>
+
+    <!-- Goiburua eta Nabigazio Menua -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="sarrera.html">Artaburu <span>Prime Video</span></a>
+            <nav aria-label="Menu nagusia">
+                <ul class="nav-list">
+                    <li><a href="sarrera.html">Hasiera</a></li>
+                    <li><a href="Datu-base.html" aria-current="page">Datu-basea</a></li>
+                    <li><a href="Sarea.html">Sareak</a></li>
+                    <li><a href="zerbitzaria.html">Zerbitzaria</a></li>
+                    <li><a href="Digitalizazioa.html">Digitalizazioa</a></li>
+                    <li><a href="markatze_lengoaia.html">Markatze lengoaiak</a></li>
+                    <li><a class="nav-login" href="index.html">Saioa hasi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Eduki Nagusia -->
+    <main id="edukia" class="page">
+        <h1 class="page-title">Datu-basea: Streaming Plataforma</h1>
+
+        <section class="intro-box">
+            <p><strong>Artaburu Prime Video</strong> streaming multimedia zerbitzua kudeatzeko datu-base erlazionalaren azterketa eta inplementazio teknikoa. Plataformak erabiltzaileak, harpidetza-planak, profil anitzak (rolak), ikus-entzunezko edukiak (ISA hierarkia: pelikulak, serieak eta dokumentalak) eta erreprodukzio-historiala (bistaratzeak) kudeatzen ditu.</p>
+        </section>
+
+        <!-- 1. ATALA: EGOERAREN ANALISIA ETA DBKS -->
+        <section>
+            <h2>1. Egoeraren analisia eta DBKS-aren abantailak</h2>
+            <p>Enpresak datuak fitxategi lauetan (Excel, CSV edo testu-fitxategietan) gorde beharrean, <strong>Datu-Baseak Kudeatzeko Sistema (DBKS / RDBMS)</strong> baten bidez kudeatzea erabaki du, ondorengo onura nagusiak bermatuz:</p>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Erredundantzia eza eta koherentzia</h3>
+                    <p>Datu bakoitza leku bakar batean gordetzen da. Adibidez, harpidetza-plan baten prezioa aldatzen denean (<code>hileko_prezioa</code>), <code>PLANAK</code> taulako erregistro bakarrean aldatzen da, eta ez milaka erabiltzaileren fitxategietan banan-banan.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Osotasun erreferentziala</h3>
+                    <p>DBKS-ak bermatzen du ez dela umezurtz geratzen den daturik egongo. Ezin da profil batek egindako bistaratzerik gorde aurretik existitzen ez den eduki bati lotuta.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Konkurrentzia eta segurtasuna</h3>
+                    <p>Erabiltzaile askok aldi berean sar daitezke plataformara datuak hondatu gabe. Pasahitzak enkriptatuta gordetzen dira eta sarbide-baimenak rol bidez kontrolatzen dira.</p>
+                </article>
+            </div>
+
+            <div class="intro-box" style="margin-top: 20px;">
+                <p><strong>Zer gertatuko litzateke datuak modu ez-egokian gordeko balira?</strong><br>
+                Fitxategi arruntetan edo normalizatu gabeko tauletan, <em>txertatze-anomaliak</em> (ezingo litzateke plan berririk sortu bezerorik gabe), <em>aldaketa-anomaliak</em> (datu bat leku batean aldatu eta bestean zaharkituta geratzea) eta <em>ezabatze-anomaliak</em> (bezero bat ezabatzean planaren informazio osoa galtzea) gertatuko lirateke.</p>
+            </div>
+        </section>
+
+        <!-- 2. ATALA: E-R DIAGRAMA ETA ISA HIERARKIA -->
+        <section>
+            <h2>2. Entitate/Erlazio (E-R) Diseinua eta ISA Hierarkia</h2>
+            <p>Kasuistikari erantzuteko bi diseinu posible aztertu dira:</p>
+            <ul>
+                <li><strong>A Aukera (Baztertua):</strong> Eduki guztiak taula bakar erraldoi batean gordetzea. Honek eremu nulo (NULL) ugari sortzen ditu; adibidez, pelikuletan <code>denboraldiak</code> eremua beti hutsik geratuko litzateke.</li>
+                <li><strong>B Aukera (Aukeratua):</strong> <strong>ISA (Espezializazio / Herentzia) hierarkia</strong> aplikatzea. <code>EDUKIAK</code> superentitate nagusiak atributu komunak biltzen ditu, eta hiru azpientitate bereizten dira: <code>PELIKULAK</code>, <code>SERIEAK</code> eta <code>DOKUMENTALAK</code>.</li>
+            </ul>
+
+            <article class="card" style="margin-top: 15px;">
+                <h3>ISA Hierarkiaren Ezaugarriak</h3>
+                <ul>
+                    <li><strong>Totala (T):</strong> Plataformako eduki orok hiru mota horietako baten parte izan behar du ezinbestean.</li>
+                    <li><strong>Disjuntua (D):</strong> Mota bakoitza esklusiboa da; eduki bat ezin da aldi berean pelikula eta serie izan.</li>
+                    <li><strong>Herentzia:</strong> Hiru azpimotek <code>id_edukia</code> gakoa heredatzen dute (Gako Nagusia PK eta Kanpo Gakoa FK aldi berean da).</li>
+                </ul>
+            </article>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <caption>Entitateen arteko erlazioak eta kardinalitateak</caption>
+                    <thead>
+                        <tr>
+                            <th>Erlazioa</th>
+                            <th>Entitateak</th>
+                            <th>Kardinalitatea</th>
+                            <th>Azalpen praktikoa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hautatzen du</strong></td>
+                            <td>PLANAK &mdash; SUSKRIPZIOAK</td>
+                            <td>1 : N</td>
+                            <td>Plan batek hainbat harpidetza izan ditzake; harpidetza batek plan bakar bat du.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ordaintzen du</strong></td>
+                            <td>ERABILTZAILEAK &mdash; SUSKRIPZIOAK</td>
+                            <td>1 : N</td>
+                            <td>Erabiltzaile batek hainbat harpidetza izan ditzake historian zehar; harpidetza erabiltzaile bati dagokio.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sortzen ditu</strong></td>
+                            <td>ERABILTZAILEAK &mdash; PROFILAK_ROLAK</td>
+                            <td>1 : N</td>
+                            <td>Kontu nagusi batek hainbat rol/profil izan ditzake (Infantila, Pertsonala, Familiarra).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ISA Espezializazioa</strong></td>
+                            <td>EDUKIAK &mdash; (PELIKULAK / SERIEAK / DOKUMENTALAK)</td>
+                            <td>1 : (0,1)</td>
+                            <td>Eduki orok bere ezaugarri espezifikoak gordetzen ditu dagokion azpimotan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bistaratzen du</strong></td>
+                            <td>PROFILAK_ROLAK &mdash; BISTARATZEAK</td>
+                            <td>1 : N</td>
+                            <td>Erreprodukzioa <em>aukeratutako profilak</em> egiten du, ez erabiltzaileak modu globalean.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Erregistratzen da</strong></td>
+                            <td>EDUKIAK &mdash; BISTARATZEAK</td>
+                            <td>1 : N</td>
+                            <td>Eduki bakoitza hainbat aldiz ikus daiteke erabiltzaileen profil ezberdinen bidez.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. ATALA: EREDU ERLAZIONALA -->
+        <section>
+            <h2>3. Eredu Erlazionala (Taulak eta Eremuak)</h2>
+            <p>Entitate/Erlazio eredua taula erlazionaletara bihurtu da. Azpiko taulan formatu normalizatua zehazten da (PK: Gako Nagusia, FK: Kanpo Gakoa):</p>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <caption>Datu-basearen 8 taula erlazionalak eta eremuen zehaztapenak</caption>
+                    <thead>
+                        <tr>
+                            <th>Taula</th>
+                            <th>Gako Nagusia (PK)</th>
+                            <th>Kanpo Gakoak (FK)</th>
+                            <th>Beste Eremuak</th>
+                            <th>Access-eko Datu Mota</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PLANAK</strong></td>
+                            <td><code>id_plana</code></td>
+                            <td>-</td>
+                            <td>izena, hileko_prezioa, pantaila_maximoak, kalitatea</td>
+                            <td>Autonumerikoa, Testu laburra, Moneta, Zenbakia (Osoa)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ERABILTZAILEAK</strong></td>
+                            <td><code>id_erabiltzailea</code></td>
+                            <td>-</td>
+                            <td>helbide_elektronikoa (UK), pasahitza_hash, izena, abizena, erregistro_data</td>
+                            <td>Autonumerikoa, Testu laburra, Data/Ordua</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SUSKRIPZIOAK</strong></td>
+                            <td><code>id_suskripzioa</code></td>
+                            <td><code>id_erabiltzailea</code>, <code>id_plana</code></td>
+                            <td>hasiera_data, amaiera_data, egoera, ordainketa_metodoa</td>
+                            <td>Autonumerikoa, Zenbakia (FK), Data/Ordua, Testu laburra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PROFILAK_ROLAK</strong></td>
+                            <td><code>id_profila</code></td>
+                            <td><code>id_erabiltzailea</code></td>
+                            <td>rol_izena, rol_mota, pin_segurtasuna, adin_muga</td>
+                            <td>Autonumerikoa, Zenbakia (FK), Testu laburra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EDUKIAK</strong></td>
+                            <td><code>id_edukia</code></td>
+                            <td>-</td>
+                            <td>izenburua, eduki_mota, generoa, estreinaldi_urtea, adin_kalifikazioa, sinopsia</td>
+                            <td>Autonumerikoa, Testu laburra, Zenbakia, Testu luzea</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PELIKULAK</strong></td>
+                            <td><code>id_edukia</code></td>
+                            <td><code>id_edukia</code> (&rarr; EDUKIAK)</td>
+                            <td>iraupena_min, zuzendaria</td>
+                            <td>Zenbakia (PK/FK), Zenbakia (Osoa), Testu laburra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SERIEAK</strong></td>
+                            <td><code>id_edukia</code></td>
+                            <td><code>id_edukia</code> (&rarr; EDUKIAK)</td>
+                            <td>denboraldiak, atal_kopurua</td>
+                            <td>Zenbakia (PK/FK), Zenbakia (Osoa)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DOKUMENTALAK</strong></td>
+                            <td><code>id_edukia</code></td>
+                            <td><code>id_edukia</code> (&rarr; EDUKIAK)</td>
+                            <td>iraupena_min, ikerketa_gaia</td>
+                            <td>Zenbakia (PK/FK), Zenbakia, Testu laburra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BISTARATZEAK</strong></td>
+                            <td><code>id_bistaratzea</code></td>
+                            <td><code>id_profila</code>, <code>id_edukia</code></td>
+                            <td>bistaratze_data, ikusitako_minutuak, osatua</td>
+                            <td>Autonumerikoa, Zenbakia (FK), Data/Ordua, Bai/Ez</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. ATALA: NORMALIZAZIOA (3FN) -->
+        <section>
+            <h2>4. Normalizazio Prozesua (3. Forma Normala - 3FN)</h2>
+            <p>Diseinatutako eredu erlazionalak normalizazioaren hiru arau nagusiak zorrotz betetzen dituela bermatu da:</p>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>1. Forma Normala (1FN)</h3>
+                    <p><span class="badge status-ok">BETETZEN DA</span></p>
+                    <ul>
+                        <li>Atributu guztiak <strong>atomikoak</strong> dira (ez dago balio konposaturik ezta errepikatutako talderik).</li>
+                        <li>Taula guztiek identifikatzaile esklusibo bat dute (Gako Nagusia - PK).</li>
+                        <li>Erabiltzaile baten hainbat profil ez dira eremu berean zerrendatzen, <code>PROFILAK_ROLAK</code> taulan erregistro banatan baizik.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>2. Forma Normala (2FN)</h3>
+                    <p><span class="badge status-ok">BETETZEN DA</span></p>
+                    <ul>
+                        <li>1FN betetzen du.</li>
+                        <li>Gako ez diren atributu guztiek <strong>mendekotasun funtzional osoa</strong> dute gako nagusiarekiko (ez dago mendekotasun partzialik gako konposatuetan).</li>
+                        <li>ISA espezializazioko tauletan (<code>PELIKULAK</code>, <code>SERIEAK</code>), atributu bakoitza <code>id_edukia</code> gakoaren menpekoa da zuzenean.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>3. Forma Normala (3FN)</h3>
+                    <p><span class="badge status-ok">BETETZEN DA</span></p>
+                    <ul>
+                        <li>2FN betetzen du.</li>
+                        <li>Ez dago <strong>mendekotasun iragankorrik (trantsitiborik)</strong>; hau da, gako ez den atributu batek ez du menpekotasunik gako ez den beste atributu batekiko.</li>
+                        <li>Adibidez: Planaren prezioa edo pantaila kopurua ez daude <code>ERABILTZAILEAK</code> edo <code>SUSKRIPZIOAK</code> taulan errepikatuta, <code>PLANAK</code> taulatik jasotzen dira soilik.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5. ATALA: ACCESS ETA OSOTASUN ARAUAK -->
+        <section>
+            <h2>5. Murrizketak eta Access-eko Inplementazioa</h2>
+            <p>Microsoft Access aplikazioan inplementazio fisikoa burutzean ondorengo arauak ezarri dira:</p>
+
+            <article class="card" style="margin-bottom: 20px;">
+                <h3>Osotasun Erreferentziala eta Kaskadako Eragiketak</h3>
+                <ul>
+                    <li><strong>Erlazio guztiak:</strong> Access-eko <em>Erlazioak</em> leihoan "Exigir integridad referencial" marka aktibatu da.</li>
+                    <li><strong>Kaskadako ezabaketak:</strong> Erabiltzaile bat ezabatzen denean, haren profilak eta harpidetzak automatikoki ezabatzen dira datu zaborrik ez uzteko.</li>
+                    <li><strong>Eremuen deskribapenak:</strong> Diseinu-ikuspegian eremu bakoitzari bere iruzkin teknikoa gehitu zaio funtzioa argitzeko.</li>
+                </ul>
+            </article>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Balidazio-Arauak (Validation Rules)</h3>
+                    <ul>
+                        <li><code>hileko_prezioa >= 0</code> (Ezin da prezio negatiborik egon).</li>
+                        <li><code>pantaila_maximoak >= 1</code> (Gutxienez pantaila bat).</li>
+                        <li><code>estreinaldi_urtea >= 1895</code> (Zinemaren lehen urtea).</li>
+                        <li><code>bistaratze_data &lt;= Now()</code> (Etorkizuneko datarik ez).</li>
+                        <li><code>rol_mota IN ('Infantila', 'Pertsonala', 'Familiarra')</code>.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Datuak Txertatzeko Ordena Logikoa</h3>
+                    <ol>
+                        <li><strong>1. Guraso-taula independenteak:</strong> Lehenik <code>PLANAK</code> eta <code>EDUKIAK</code> bete behar dira.</li>
+                        <li><strong>2. ISA Azpimotak:</strong> Edukien xehetasunak sartu (<code>PELIKULAK</code>, <code>SERIEAK</code>, <code>DOKUMENTALAK</code>).</li>
+                        <li><strong>3. Bezeroak:</strong> <code>ERABILTZAILEAK</code> erregistroak sortu.</li>
+                        <li><strong>4. Dependentziak:</strong> <code>SUSKRIPZIOAK</code> eta <code>PROFILAK_ROLAK</code> txertatu.</li>
+                        <li><strong>5. Jarduera:</strong> Azkenik <code>BISTARATZEAK</code> gehitu.</li>
+                    </ol>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Oina (Footer) -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <section>
+                <h2>Artaburu Prime Video</h2>
+                <p>Streaming eduki plataforma<br>SISA 1 &mdash; 1. Erronka</p>
+            </section>
+            <section>
+                <h2>Kontaktua</h2>
+                <address>
+                    Tel.: <a href="tel:+34684459018">684 45 90 18</a><br>
+                    Posta: <a href="mailto:vizcaino.hector@uni.eus">vizcaino.hector@uni.eus</a>
+                </address>
+            </section>
+            <section>
+                <h2>Taldea</h2>
+                <p>4. Taldea: Telmo, Peru, Iñigo, Hector<br>Uni Eibar-Ermua</p>
+            </section>
+        </div>
+        <p class="copyright">&copy; 2026 Artaburu Prime Video &mdash; 4. Taldea</p>
+    </footer>
 </body>
 </html>
