@@ -39,7 +39,7 @@ Proiekturako **VMware Workstation** birtualizazio-ingurunea erabili da. Sare-kom
 
 ![Sare Moldagailua](./Argazkiak%20Sistemas/1%20-%20Adaptadorea%20aldatu.png)
 
-Rúbrikaren jarraibideak jarraituz, ekipoari **`Artaburu`** izen ofiziala ezarri zaio eta IP helbideratze estatikoa konfiguratu da:
+Errubrikaren jarraibideak jarraituz, ekipoari **`Artaburu`** izen ofiziala ezarri zaio eta IP helbideratze estatikoa konfiguratu da:
 * **Ekipoaren izena (Hostname):** `Artaburu`
 * **IP helbidea:** `192.168.70.9`
 * **Azpisare-maskara:** `255.255.255.0`
@@ -57,7 +57,7 @@ Sistemaren biltegiratze-ahalmena eta RAID egiturak prestatu ahal izateko, makina
 ### 2.3. Eguneraketak eta Berreskuratze-teknikak (Snapshot)
 Sistemaren osotasuna eta segurtasuna bermatzeko:
 1. **Windows Update:** Eguneraketa guztiak egiaztatu eta instalatu dira.
-2. **Instantánea (Snapshot):** VMware bidez berreskuratze-puntu garbi bat sortu da (*Punto Limpio - Sistema eta Diskoak Preparados*), akatsik balego sistema egoera egonkorrera berehala itzuli ahal izateko.
+2. **Instantánea (Snapshot):** VMware bidez berreskuratze-puntu garbi bat sortu da, akatsik balego sistema egoera egonkorrera berehala itzuli ahal izateko.
 
 | Windows Update Eguneraketak | Berreskuratze Snapshot-a |
 | :---: | :---: |
@@ -88,7 +88,7 @@ Rol hierarkikoak bereizteko bi talde eta dagozkien kontuak sortu dira:
 ![Taldeak eta Erabiltzaileak](./Argazkiak%20Sistemas/11%20-%20Taldeak%20eta%20Erabiltzaileak.png)
 
 ### 3.3. NTFS Baimenen Ezarpena Karpeta Partekatuan
-Datu-bolumenean `Enpresa_Datuak` karpeta sortu da eta herentzia desgaitu ondoren NTFS baimen zehatzak ezarri dira:
+Datu-bolumenean `Enpresa_Datuak` karpeta sortu da eta herentzia desgaitu, ondoren NTFS baimen zehatzak ezarri dira:
 * `G_Teknikariak`: **Kontrol Osoa (Full Control)**.
 * `G_Langileak`: **Irakurketa eta Exekuzioa (Read & Execute)** soilik (ezin dute fitxategirik ezabatu ezta aldatu).
 
@@ -96,7 +96,7 @@ Datu-bolumenean `Enpresa_Datuak` karpeta sortu da eta herentzia desgaitu ondoren
 | :---: | :---: |
 | ![NTFS 1](./Argazkiak%20Sistemas/12%20-%20NTFS%20Baimenak1.png) | ![NTFS 2](./Argazkiak%20Sistemas/13%20-%20NTFS%20Baimenak2.png) |
 
-### 3.4. Web Zerbitzaria (IIS) eta RAID 5-era Lotura
+### 3.4. Web Zerbitzaria (IIS) eta RAID 5-ra Lotura
 1. **IIS (Internet Information Services)** rola instalatu da zerbitzarian.
 2. Webgunearen karpeta nagusia (`Default Web Site`) disko lokaletik (`C:\`) **RAID 5 bolumenera (`H:\Web_Enpresa`)** bideratu da. Horrela, web-orria hardware-akatsen aurrean babestuta dago.
 3. Sare lokaleko beste gailu batetik (portatila / mugikorra) `http://192.168.70.9` atzituz webgunea behar bezala zerbitzatzen dela frogatu da.
@@ -115,7 +115,7 @@ Datu-bolumenean `Enpresa_Datuak` karpeta sortu da eta herentzia desgaitu ondoren
 ### 4.1. Bolumen Sinpleak, Banatuak (Spanned) eta Disko Kuotak
 Diskoen kudeaketa aurreratua erakusteko, hainbat bolumen mota sortu dira:
 * **Bolumen Sinplea (`E:`):** Disco 1 erabiliz.
-* **Bolumen Banatua / Distribuido (`F:`):** Disco 2 eta Disco 3 (disko dinamikoak) elkartuz sortutako **20 GB-ko bolumen bateratua** (kolore mororea).
+* **Bolumen Banatua / Distribuido (`F:`):** Disco 2 eta Disco 3 (disko dinamikoak) elkartuz sortutako **20 GB-ko bolumen bateratua** (kolore morea).
 * **Disko-kuotak:** Erabiltzaile bakoitzak har dezakeen espazioa mugatzeko kuotak aktibatu dira:
   * Espazio-muga: **2 GB**.
   * Abisu-maila: **1,5 GB**.
@@ -129,7 +129,7 @@ Diskoen kudeaketa aurreratua erakusteko, hainbat bolumen mota sortu dira:
 #### A) RAID 1 — Ispilua (`G:`)
 * **Diskoak:** Disco 4 eta Disco 5 (dinamikoak).
 * **Ezaugarriak:** Informazio bikoiztua (ispilua / *mirror*). Diskoetako batek huts egingo balu, sistemak etenik gabe funtzionatzen jarraitzen du.
-* **Kolorea:** Granate / Gorri iluna.
+* **Kolorea:** Granate.
 
 ![RAID 1 Ispilua](./Argazkiak%20Sistemas/14%20-%20Raid%201.png)
 
@@ -137,28 +137,28 @@ Diskoen kudeaketa aurreratua erakusteko, hainbat bolumen mota sortu dira:
 * **Diskoak:** Disco 6, Disco 7 eta Disco 8 (dinamikoak, 10 GB bakoitzak).
 * **Ezaugarriak:** Datuak eta paritatea 3 diskoetan zehar banatzen dira. Erabilgarri dagoen espazioa guztira **20 GB** da ($N-1$). Disko batek huts eginez gero, paritatearen bidez datuak birkalkulatzen dira.
 * **Aplikazio praktikoa:** Bolumen honetan kokatu da enpresaren **webgune ofiziala (`H:\Web_Enpresa`)**.
-* **Kolorea:** Urdin argia / Ziana.
+* **Kolorea:** Urdin argia.
 
 ![RAID 5 Paritatea](./Argazkiak%20Sistemas/15%20-%20Raid%205.png)
 
 ### 4.3. Babeskopia Automatikoak (Windows Server Backup)
 Sistemaren datuak babesteko eta hondamenen aurrean erantzuteko:
 1. **Ezaugarriaren instalazioa:** *Copias de seguridad de Windows Server* instalatu da zerbitzarian.
-2. **Kopia programatua:** Eguneroko babeskopia automatiko bat ezarri da gaueko orduetan, `Web_Enpresa` karpeta eta sistemaren egoera bolumen seguru batean gordetzeko.
+2. **Kopia programatua:** Eguneroko babeskopia automatiko bat ezarri da eguardiko orduetan, `Web_Enpresa` karpeta eta sistemaren egoera bolumen seguru batean gordetzeko.
 
 | Windows Server Backup Ezaugarria | Babeskopiaren Programazioa |
 | :---: | :---: |
 | ![Kopien Rola](./Argazkiak%20Sistemas/18%20-%20Kopien%20rola%20instalatu.png) | ![Babeskopia](./Argazkiak%20Sistemas/19%20-%20Segurtasun%20kopia.png) |
 
 ### 4.4. Hirugarrenen Tresnak: Cobian Reflector bidezko Babeskopiak
-Rúbrikaren eskakizunak betetzeko (hirugarrenen softwarea erabiliz babeskopiak automatizatzea):
+Errubrikaren eskakizunak betetzeko (hirugarrenen softwarea erabiliz babeskopiak automatizatzea):
 1. **Cobian Reflector 2.7.20** instalatu da zerbitzu moduan (atzeko planoan etengabe martxan egoteko).
-2. `Web_Enpresa_Diferencial` zeregina sortu da:
+2. `Web_Enpresa_Babeskopia` zeregina sortu da:
    * **Mota:** Diferentziala (aldaketak soilik kopiatuz biltegiratzea optimizatzeko).
    * **Iturria:** `H:\Web_Enpresa` (RAID 5 bolumena).
    * **Helburua:** `E:\Cobian_Kopiak`.
    * **Formatua:** Zip fitxategi monolitiko globala (konpresioarekin).
-   * **Ordutegia:** Egunero gaueko 22:00etan.
+   * **Ordutegia:** Egunero eguardiko 14:00-tan.
 3. Kopiaren egiaztapena egin da: prozesua 0 akatsekin amaitu da eta `.zip` fitxategia behar bezala sortu da.
 
 | Cobian Reflector Konfigurazioa | Babeskopiaren Egiaztapena |
