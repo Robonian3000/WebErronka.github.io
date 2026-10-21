@@ -1,4 +1,4 @@
-# 3. Sistema Eragileen Ezartzea (SISA 1 — 1. Erronka)
+﻿# 3. Sistema Eragileen Ezartzea (SISA 1 — 1. Erronka)
 
 **Egilea:** Iñigo (4. Taldea)  
 **Zerbitzariaren Izena (Hostname):** `Artaburu`  
@@ -165,6 +165,15 @@ Errubrikaren eskakizunak betetzeko (hirugarrenen softwarea erabiliz babeskopiak 
 | :---: | :---: |
 | ![Cobian Konfigurazioa](./Argazkiak%20Sistemas/20%20-%20Cabian%20Konfig.png) | ![Cobian Egiaztapena](./Argazkiak%20Sistemas/21%20-%20Cabian%20babeskopia.png) |
 
+
+### 4.5. Disko-Irudiak (Disk2vhd)
+Errubrikaren eskakizunak betetzeko (diskoaren irudia sortzea hirugarrenen tresnekin):
+1. **Disk2vhd (Microsoft Sysinternals)** tresna erabili da.
+2. **Vhdx** formatu modernoan eta **Volume Shadow Copy (VSS)** teknologia erabiliz, ARTABURU.vhdx disko-irudia sortu da.
+3. Prozesua arrakastaz osatu da (*Disk export to VHD completed successfully*), bolumenaren segurtasun-klonazio osoa lortuz.
+
+![Disk2vhd Irudia](./Argazkiak%20Sistemas/22%20-%20Disk2vhd.png)
+
 ---
 
 ## 5. Ondorioak eta Hurrengo Urratsak (2. Astea)
@@ -180,3 +189,4 @@ Lehen aste honetan (Urriak 19-23) planifikatutako helburu tekniko guztiak arraka
 1. Hirugarrenen tresnekin (adib. Cobian Reflector) babeskopia gehigarriak konfiguratzea.
 2. Disko-irudiak sortzea eta hondamenen aurreko berreskuratze-plana garatzea.
 3. Azken integrazioa eta proiektuaren aurkezpena.
+
