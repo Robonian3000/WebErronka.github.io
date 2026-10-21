@@ -150,6 +150,21 @@ Sistemaren datuak babesteko eta hondamenen aurrean erantzuteko:
 | :---: | :---: |
 | ![Kopien Rola](./Argazkiak%20Sistemas/18%20-%20Kopien%20rola%20instalatu.png) | ![Babeskopia](./Argazkiak%20Sistemas/19%20-%20Segurtasun%20kopia.png) |
 
+### 4.4. Hirugarrenen Tresnak: Cobian Reflector bidezko Babeskopiak
+Rúbrikaren eskakizunak betetzeko (hirugarrenen softwarea erabiliz babeskopiak automatizatzea):
+1. **Cobian Reflector 2.7.20** instalatu da zerbitzu moduan (atzeko planoan etengabe martxan egoteko).
+2. `Web_Enpresa_Diferencial` zeregina sortu da:
+   * **Mota:** Diferentziala (aldaketak soilik kopiatuz biltegiratzea optimizatzeko).
+   * **Iturria:** `H:\Web_Enpresa` (RAID 5 bolumena).
+   * **Helburua:** `E:\Cobian_Kopiak`.
+   * **Formatua:** Zip fitxategi monolitiko globala (konpresioarekin).
+   * **Ordutegia:** Egunero gaueko 22:00etan.
+3. Kopiaren egiaztapena egin da: prozesua 0 akatsekin amaitu da eta `.zip` fitxategia behar bezala sortu da.
+
+| Cobian Reflector Konfigurazioa | Babeskopiaren Egiaztapena |
+| :---: | :---: |
+| ![Cobian Konfigurazioa](./Argazkiak%20Sistemas/20%20-%20Cabian%20Konfig.png) | ![Cobian Egiaztapena](./Argazkiak%20Sistemas/21%20-%20Cabian%20babeskopia.png) |
+
 ---
 
 ## 5. Ondorioak eta Hurrengo Urratsak (2. Astea)
