@@ -1,37 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel= "stylesheet "href="style.css"
+    <meta name="description" content="Artaburu Prime Video: enpresaren azpiegitura informatikoaren proposamenak - 4. Taldea">
+    <title>Hasiera | Artaburu Prime Video</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container header">
-        <h1>Hasiera</h1>
-        <a href="Datu-base.html"><div>Datu base </div> </a>
-        <a href="Digitalizazioa.html"><div>Digitalizazioa</div> </a>
-        <a href="Sarea.html"><div>Sarea</div></a>
-        <a href="zerbitzaria.html"><div>zerbitzaria</div> </a>
-        <a href="markatze_lengoaia.html"><div>markatze lengoaia</div> </a>
-    </div>
-    <div class="main">
+    <a class="skip-link" href="#edukia">Joan edukira</a>
 
-    </div>
-    <h1>Sarrera:</h1>
-    <div class="zona-carrusel">
-        <div class="contenedor-carrusel">
-            <div class="carrusel">
-                <img src="argazkiak/zerbitzaria.jpg" alt="zerbitzari">
-                <img src="argazkiak/sarea.jpg" alt= "sarea">
-                <img src="argazkiak/html.png" alt="html">
-                <img src="argazkiak/github.jpg" alt="github">
-                <img src="argazkiak/datubase.jpg" alt="datubase">
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="sarrera.html">Artaburu <span>Prime Video</span></a>
+            <nav aria-label="Menu nagusia">
+                <ul class="nav-list">
+                    <li><a href="sarrera.html" aria-current="page">Hasiera</a></li>
+                    <li><a href="Datu-base.html">Datu-basea</a></li>
+                    <li><a href="Sarea.html">Sareak</a></li>
+                    <li><a href="zerbitzaria.html">Zerbitzaria</a></li>
+                    <li><a href="Digitalizazioa.html">Digitalizazioa</a></li>
+                    <li><a href="markatze_lengoaia.html">Markatze lengoaiak</a></li>
+                    <li><a class="nav-login" href="index.html">Saioa hasi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="edukia" class="page">
+        <h1 class="page-title">Ongi etorri Artaburu Prime Video-ra</h1>
+
+        <section class="intro-box">
+            <p>Artaburu Prime Video streaming eduki plataforma bat da (pelikulak, serieak eta dokumentalak). Enpresak bere egitura informatikoa osatzeko aukera ezberdinak bilatzen ditu, eta webgune honetan gure proposamenak aurkezten ditugu: datu-basea, sarea, zerbitzaria eta digitalizazioa.</p>
+        </section>
+
+        <div class="zona-carrusel">
+            <div class="contenedor-carrusel">
+                <div class="carrusel">
+                    <img src="argazkiak/zerbitzaria.jpg" alt="Zerbitzari informatikoak">
+                    <img src="argazkiak/sarea.jpg" alt="Sare-kableak eta konexioak">
+                    <img src="argazkiak/html.png" alt="HTML5 logotipoa">
+                    <img src="argazkiak/github.jpg" alt="GitHub logotipoa">
+                    <img src="argazkiak/datubase.jpg" alt="Datu-base baten ikonoa">
+                </div>
             </div>
         </div>
-    </div>
-    <footer>
-            <p>SISA 1 — 1. Erronka | 4. Taldea: Telmo, Peru, Iñigo, Hector (Uni Eibar-Ermua)</p>
+
+        <h2>Proiektuaren atalak</h2>
+        <div class="card-grid">
+            <article class="card">
+                <h3>Datu-basea</h3>
+                <p>Streaming plataformaren E-R diagrama, eredu erlazional normalizatua eta Access-en inplementazioa.</p>
+                <a class="card-link" href="Datu-base.html">Ikusi atala &rarr;</a>
+            </article>
+            <article class="card">
+                <h3>Sareak</h3>
+                <p>OSI ereduaren lehen bi mailak: kableak, patch panel-a, switch-a, CRC-6-GSM eta modulazioak.</p>
+                <a class="card-link" href="Sarea.html">Ikusi atala &rarr;</a>
+            </article>
+            <article class="card">
+                <h3>Zerbitzaria</h3>
+                <p>Windows Server zerbitzaria, RAID bolumenak, segurtasun-politikak eta IIS web-zerbitzaria.</p>
+                <a class="card-link" href="zerbitzaria.html">Ikusi atala &rarr;</a>
+            </article>
+            <article class="card">
+                <h3>Digitalizazioa</h3>
+                <p>IT/OT teknologiak, teknologia gaitzaile digitalak (THD) eta cloud computing.</p>
+                <a class="card-link" href="Digitalizazioa.html">Ikusi atala &rarr;</a>
+            </article>
+            <article class="card">
+                <h3>Markatze lengoaiak</h3>
+                <p>Webgune honen egitura (HTML5), estiloak (CSS) eta irisgarritasuna.</p>
+                <a class="card-link" href="markatze_lengoaia.html">Ikusi atala &rarr;</a>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <section>
+                <h2>Artaburu Prime Video</h2>
+                <p>Streaming eduki plataforma<br>SISA 1 &mdash; 1. Erronka</p>
+            </section>
+            <section>
+                <h2>Kontaktua</h2>
+                <address>
+                    Tel.: <a href="tel:+34684459018">684 45 90 18</a><br>
+                    Posta: <a href="mailto:vizcaino.hector@uni.eus">vizcaino.hector@uni.eus</a>
+                </address>
+            </section>
+            <section>
+                <h2>Taldea</h2>
+                <p>4. Taldea: Telmo, Peru, Iñigo, Hector<br>Uni Eibar-Ermua</p>
+            </section>
+        </div>
+        <p class="copyright">&copy; 2026 Artaburu Prime Video &mdash; 4. Taldea</p>
     </footer>
 </body>
 </html>

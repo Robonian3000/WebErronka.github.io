@@ -1,45 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<head>
-		<title>Formularioa</title>
-		<link rel="stylesheet" href="style.css">
-		<style>
-			background
-		</style>
+    <meta name="description" content="Artaburu Prime Video - Saioa hasi">
+    <title>Saioa hasi | Artaburu Prime Video</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-	<header><div class="container header">
-		<h1>Artaburu prime video</h1>
-	</div></header>
 <body>
-			<div class="container">
-			<h1>Saio hasi:</h1>
+    <a class="skip-link" href="#edukia">Joan edukira</a>
 
-		<main>
-			<form id="login">
-				<label for="email">Posta-elektronikoa:</label><br>
-				<input type="email" id="email" name="email" size="40" required><br><br>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="sarrera.html">Artaburu <span>Prime Video</span></a>
+            <nav aria-label="Menu nagusia">
+                <ul class="nav-list">
+                    <li><a href="sarrera.html">Hasiera</a></li>
+                    <li><a href="Datu-base.html">Datu-basea</a></li>
+                    <li><a href="Sarea.html">Sareak</a></li>
+                    <li><a href="zerbitzaria.html">Zerbitzaria</a></li>
+                    <li><a href="Digitalizazioa.html">Digitalizazioa</a></li>
+                    <li><a href="markatze_lengoaia.html">Markatze lengoaiak</a></li>
+                    <li><a class="nav-login" href="index.html" aria-current="page">Saioa hasi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-				<label for="password">Pasahitza:</label><br>
-				<input type="password" id="password" name="password" size="20" required><br><br>
+    <main id="edukia" class="page">
+        <h1 class="page-title">Saioa hasi</h1>
 
-				<input type="submit" value="Bidali" class="button">
-			</form>
-			</div>
-			
-			<section class="container">
-				<h2>Kontaktua</h2>
-				<address>
-				684 45 90 18
-				</address>
-				vizcaino.hector@uni.eus
-			</section>
-		</main>
-        <footer>
-            <p>SISA 1 — 1. Erronka | 4. Taldea: Telmo, Peru, Iñigo, Hector (Uni Eibar-Ermua)</p>
-        </footer>
-	</body>
+        <!-- Proba-formularioa: eremuek ez dute "name" atributurik, beraz datuak ez dira URLan bidaltzen -->
+        <form id="login" class="login-form" action="sarrera.html" method="get">
+            <label for="email">Posta elektronikoa</label>
+            <input type="email" id="email" autocomplete="email" placeholder="adibidea@uni.eus" required>
+
+            <label for="password">Pasahitza</label>
+            <input type="password" id="password" autocomplete="current-password" minlength="8" required>
+
+            <button type="submit" class="button">Sartu</button>
+        </form>
+
+        <p class="form-note">Proba-formularioa da: datuak ez dira inon gordetzen.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <section>
+                <h2>Artaburu Prime Video</h2>
+                <p>Streaming eduki plataforma<br>SISA 1 &mdash; 1. Erronka</p>
+            </section>
+            <section>
+                <h2>Kontaktua</h2>
+                <address>
+                    Tel.: <a href="tel:+34684459018">684 45 90 18</a><br>
+                    Posta: <a href="mailto:vizcaino.hector@uni.eus">vizcaino.hector@uni.eus</a>
+                </address>
+            </section>
+            <section>
+                <h2>Taldea</h2>
+                <p>4. Taldea: Telmo, Peru, Iñigo, Hector<br>Uni Eibar-Ermua</p>
+            </section>
+        </div>
+        <p class="copyright">&copy; 2026 Artaburu Prime Video &mdash; 4. Taldea</p>
+    </footer>
+</body>
 </html>
