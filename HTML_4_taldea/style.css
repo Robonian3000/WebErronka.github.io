@@ -471,3 +471,213 @@ code {
         justify-content: center;
     }
 }
+
+
+/* ---------- 11. Streaming Plataformako Elementuak ---------- */
+.hero-streaming {
+    background: linear-gradient(180deg, rgba(155, 41, 41, 0.4) 0%, rgba(18, 18, 18, 0.95) 100%);
+    border: 1px solid var(--gorria);
+    border-radius: var(--borobila);
+    padding: 35px 25px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero-streaming h1 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.hero-streaming h1 span {
+    color: var(--urrea);
+}
+
+.hero-streaming p {
+    font-size: 1.15rem;
+    color: var(--testu-argia);
+    max-width: 700px;
+    margin: 0 auto 24px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--gorria);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.05rem;
+    padding: 12px 26px;
+    border-radius: var(--borobila);
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+    border: none;
+}
+
+.btn-cta:hover,
+.btn-cta:focus-visible {
+    background-color: var(--gorri-iluna);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--urrea);
+    border: 2px solid var(--urrea);
+    font-weight: bold;
+    font-size: 1.05rem;
+    padding: 10px 24px;
+    border-radius: var(--borobila);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background-color: var(--urrea);
+    color: var(--beltza);
+}
+
+/* Streaming fitxa / kartelak */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 20px 0;
+}
+
+.media-card {
+    background: var(--txartela);
+    border: 1px solid var(--ertza);
+    border-radius: var(--borobila);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.media-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--urrea);
+}
+
+.media-poster {
+    background: #111;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid var(--gorria);
+}
+
+.media-poster-icon {
+    font-size: 3rem;
+}
+
+.media-tag {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--urrea);
+    color: var(--urrea);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.media-info {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.media-info h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.media-meta {
+    font-size: 0.85rem;
+    color: var(--testu-argia);
+    margin-bottom: 8px;
+}
+
+.media-desc {
+    font-size: 0.85rem;
+    color: #ddd;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.media-btn {
+    display: block;
+    text-align: center;
+    background: var(--gorria);
+    color: #fff;
+    padding: 7px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.media-btn:hover {
+    background: var(--gorri-iluna);
+    color: #fff;
+}
+
+/* Profilen kaxak */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.profile-card {
+    background: var(--txartela);
+    border: 1px solid var(--ertza);
+    border-radius: var(--borobila);
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    border: 2px solid var(--urrea);
+    background: #2a2a2a;
+}
+
+.profile-card h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    color: var(--urrea);
+}
+
+.profile-card p {
+    font-size: 0.85rem;
+    color: var(--testu-argia);
+    margin: 0;
+}
