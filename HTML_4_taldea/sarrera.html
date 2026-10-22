@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artaburu Prime Video: enpresaren azpiegitura informatikoaren proposamenak - 4. Taldea">
+    <meta name="description" content="Artaburu Prime Video: streaming eduki plataforma. Filmak, telesailak eta dokumentalak zure eskura.">
     <title>Hasiera | Artaburu Prime Video</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a class="skip-link" href="#edukia">Joan edukira</a>
 
+    <!-- Goiburua eta Nabigazio Menua -->
     <header class="site-header">
         <div class="header-inner">
             <a class="brand" href="sarrera.html">Artaburu <span>Prime Video</span></a>
@@ -21,80 +22,253 @@
                     <li><a href="zerbitzaria.html">Zerbitzaria</a></li>
                     <li><a href="Digitalizazioa.html">Digitalizazioa</a></li>
                     <li><a href="markatze_lengoaia.html">Markatze lengoaiak</a></li>
-                    <li><a class="nav-login" href="index.html">Saioa hasi</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Eduki Nagusia -->
     <main id="edukia" class="page">
-        <h1 class="page-title">Ongi etorri Artaburu Prime Video-ra</h1>
 
-        <section class="intro-box">
-            <p>Artaburu Prime Video streaming eduki plataforma bat da (pelikulak, serieak eta dokumentalak). Enpresak bere egitura informatikoa osatzeko aukera ezberdinak bilatzen ditu, eta webgune honetan gure proposamenak aurkezten ditugu: datu-basea, sarea, zerbitzaria eta digitalizazioa.</p>
+        <!-- 1. HERO BANNER: ONGI ETORRIA -->
+        <section class="hero-streaming">
+            <h1>Ongi etorri <span>Artaburu Prime Video</span>-ra</h1>
+            <p>Zure ikus-entzunezko plataforma berria. Gozatu milaka film, telesail eta dokumentalez edozein gailutan, kalitate gorenean eta etenik gabe.</p>
+            <div class="hero-actions">
+                <a class="btn-cta" href="index.html">▶ Hasi Saioa eta Ikusi</a>
+                <a class="btn-secondary" href="#planak">Ikusi Planak eta Prezioak</a>
+            </div>
         </section>
 
-        <div class="zona-carrusel">
-            <div class="contenedor-carrusel">
-                <div class="carrusel">
-                    <img src="argazkiak/zerbitzaria.jpg" alt="Zerbitzari informatikoak">
-                    <img src="argazkiak/sarea.jpg" alt="Sare-kableak eta konexioak">
-                    <img src="argazkiak/html.png" alt="HTML5 logotipoa">
-                    <img src="argazkiak/github.jpg" alt="GitHub logotipoa">
-                    <img src="argazkiak/datubase.jpg" alt="Datu-base baten ikonoa">
-                </div>
-            </div>
-        </div>
+        <!-- 2. PLATAFORMAKO ROLAK ETA PROFILAK -->
+        <section>
+            <h2>Aukeratu Zure Profila</h2>
+            <p>Erabiltzaile bakar batekin profil anitz sor ditzakezu. Saioa hastean, aukeratu zure rola edukia pertsonalizatzeko:</p>
+            
+            <div class="profile-grid">
+                <article class="profile-card">
+                    <div class="profile-avatar">👤</div>
+                    <h3>Pertsonala / Heldua</h3>
+                    <p>Katalogo osoa mugarik gabe (+18), gomendio adimendunak eta historia pertsonala.</p>
+                </article>
 
-        <h2>Proiektuaren atalak</h2>
-        <div class="card-grid">
-            <article class="card">
-                <h3>Datu-basea</h3>
-                <p>Streaming plataformaren E-R diagrama, eredu erlazional normalizatua eta Access-en inplementazioa.</p>
-                <a class="card-link" href="Datu-base.html">Ikusi atala &rarr;</a>
-            </article>
-            <article class="card">
-                <h3>Sareak</h3>
-                <p>OSI ereduaren lehen bi mailak: kableak, patch panel-a, switch-a, CRC-6-GSM eta modulazioak.</p>
-                <a class="card-link" href="Sarea.html">Ikusi atala &rarr;</a>
-            </article>
-            <article class="card">
-                <h3>Zerbitzaria</h3>
-                <p>Windows Server zerbitzaria, RAID bolumenak, segurtasun-politikak eta IIS web-zerbitzaria.</p>
-                <a class="card-link" href="zerbitzaria.html">Ikusi atala &rarr;</a>
-            </article>
-            <article class="card">
-                <h3>Digitalizazioa</h3>
-                <p>IT/OT teknologiak, teknologia gaitzaile digitalak (THD) eta cloud computing.</p>
-                <a class="card-link" href="Digitalizazioa.html">Ikusi atala &rarr;</a>
-            </article>
-            <article class="card">
-                <h3>Markatze lengoaiak</h3>
-                <p>Webgune honen egitura (HTML5), estiloak (CSS) eta irisgarritasuna.</p>
-                <a class="card-link" href="markatze_lengoaia.html">Ikusi atala &rarr;</a>
-            </article>
-        </div>
+                <article class="profile-card">
+                    <div class="profile-avatar">🧒</div>
+                    <h3>Infantila</h3>
+                    <p>Umeentzako marrazki bizidunak eta abenturak. Adin-kontrola eta PIN babesa.</p>
+                </article>
+
+                <article class="profile-card">
+                    <div class="profile-avatar">👥</div>
+                    <h3>Familiarra</h3>
+                    <p>Familia osoak elkarrekin gozatzeko komediak, dokumentalak eta film klasikoak.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. PELIKULAK (FILMAK) -->
+        <section>
+            <h2>🎬 Pelikula Nabarmenduak</h2>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">🕶️</span>
+                        <span class="media-tag">+16 &bull; 4K</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>The Matrix</h3>
+                        <div class="media-meta">Zientzia-fikzioa &bull; 136 min &bull; 1999</div>
+                        <p class="media-desc">Hacker batek gizateria ordenagailuz sortutako simulazio batean gatibu bizi dela deskubrituko du.</p>
+                        <a class="media-btn" href="index.html">▶ Erreproduzitu</a>
+                    </div>
+                </article>
+
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">⏳</span>
+                        <span class="media-tag">+12 &bull; 4K</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>Inception</h3>
+                        <div class="media-meta">Zientzia-fikzioa / Suspense &bull; 148 min &bull; 2010</div>
+                        <p class="media-desc">Lapur talde batek ametsen bidez besteen subkontzientean ideiak txertatzeko enkargua jasoko du.</p>
+                        <a class="media-btn" href="index.html">▶ Erreproduzitu</a>
+                    </div>
+                </article>
+
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">🚀</span>
+                        <span class="media-tag">+12 &bull; 4K</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>Interstellar</h3>
+                        <div class="media-meta">Zientzia-fikzioa / Drama &bull; 169 min &bull; 2014</div>
+                        <p class="media-desc">Astronauta talde batek zizare-zulo bat zeharkatuko du gizateriarentzat bizileku berri bat aurkitzeko.</p>
+                        <a class="media-btn" href="index.html">▶ Erreproduzitu</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. SERIEAK (TELESAILAK) -->
+        <section>
+            <h2>📺 Telesail Arrakastatsuak</h2>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">💻</span>
+                        <span class="media-tag">+16 &bull; HD</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>Mr. Robot</h3>
+                        <div class="media-meta">Zibersegurtasuna / Drama &bull; 4 Denboraldi &bull; 2015</div>
+                        <p class="media-desc">Zibersegurtasuneko ingeniari gazte batek korporazio boteretsu bat eraitsi nahi duen hacker taldean sartuko da.</p>
+                        <a class="media-btn" href="index.html">▶ Ikusi Atal Berriak</a>
+                    </div>
+                </article>
+
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">🚲</span>
+                        <span class="media-tag">+16 &bull; 4K</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>Stranger Things</h3>
+                        <div class="media-meta">Fantasia / Misterioa &bull; 4 Denboraldi &bull; 2016</div>
+                        <p class="media-desc">Haur baten desagerpen misteriotsuak sekretu militarrak eta naturaz gaindiko mundu paralelo bat azaleratuko ditu.</p>
+                        <a class="media-btn" href="index.html">▶ Ikusi Atal Berriak</a>
+                    </div>
+                </article>
+
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">🧪</span>
+                        <span class="media-tag">+18 &bull; 4K</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>Breaking Bad</h3>
+                        <div class="media-meta">Krimena / Drama &bull; 5 Denboraldi &bull; 2008</div>
+                        <p class="media-desc">Kimikako irakasle batek metamfetamina ekoizteari ekingo dio bere familiari etorkizun ekonomikoa bermatzeko.</p>
+                        <a class="media-btn" href="index.html">▶ Ikusi Atal Berriak</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5. DOKUMENTALAK -->
+        <section>
+            <h2>🌍 Dokumental Nabarmenduak</h2>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">🌱</span>
+                        <span class="media-tag">Denontzat &bull; 4K HDR</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>Gure Planeta (Our Planet)</h3>
+                        <div class="media-meta">Natura / Ekologia &bull; 8 Atal &bull; 2019</div>
+                        <p class="media-desc">Lurreko ekosistema basatienen edertasuna eta klima-aldaketaren eragina erakusten dituen ekoizpena.</p>
+                        <a class="media-btn" href="index.html">▶ Ikusi Dokumentala</a>
+                    </div>
+                </article>
+
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">🔭</span>
+                        <span class="media-tag">Denontzat &bull; 4K</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>Kosmosa: Bidaia Espaziala</h3>
+                        <div class="media-meta">Zientzia / Astronomia &bull; 13 Atal &bull; 2020</div>
+                        <p class="media-desc">Unibertsoaren jatorria, galaxien eboluzioa eta zientzia modernoaren aurkikuntzarik handienak.</p>
+                        <a class="media-btn" href="index.html">▶ Ikusi Dokumentala</a>
+                    </div>
+                </article>
+
+                <article class="media-card">
+                    <div class="media-poster">
+                        <span class="media-poster-icon">🏛️</span>
+                        <span class="media-tag">+7 &bull; HD</span>
+                    </div>
+                    <div class="media-info">
+                        <h3>Zibilizazio Galduak</h3>
+                        <div class="media-meta">Historia / Arkeologia &bull; 6 Atal &bull; 2021</div>
+                        <p class="media-desc">Antzinako inperioen eraikuntzak, misterioak eta desagertzearen arrazoiak aztertzen dituen ikerketa.</p>
+                        <a class="media-btn" href="index.html">▶ Ikusi Dokumentala</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 6. HARPIDETZA PLANAK -->
+        <section id="planak">
+            <h2>Harpidetza Planak eta Tarifak</h2>
+            <p>Aukeratu zure beharretara hobekien egokitzen den plana. Ez dago iraunkortasun konpromisorik:</p>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <caption>Artaburu Prime Video harpidetza planen alderaketa</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Plana</th>
+                            <th scope="col">Hileko Prezioa</th>
+                            <th scope="col">Bereizmena</th>
+                            <th scope="col">Simultaneo Pantailak</th>
+                            <th scope="col">Deskargak Lineaz Kanpo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Oinarrizkoa</strong></td>
+                            <td>4,99 &euro; / hilean</td>
+                            <td>HD (720p)</td>
+                            <td>1 Gailu aldi berean</td>
+                            <td>Ez</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estandarra</strong></td>
+                            <td>9,99 &euro; / hilean</td>
+                            <td>Full HD (1080p)</td>
+                            <td>2 Gailu aldi berean</td>
+                            <td>Bai (mugikorrean)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Premium</strong></td>
+                            <td>14,99 &euro; / hilean</td>
+                            <td>4K Ultra HD + HDR</td>
+                            <td>4 Gailu aldi berean</td>
+                            <td>Bai (gailu guztietan)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
     </main>
 
+    <!-- Oina (Footer) -->
     <footer class="site-footer">
         <div class="footer-inner">
             <section>
                 <h2>Artaburu Prime Video</h2>
-                <p>Streaming eduki plataforma<br>SISA 1 &mdash; 1. Erronka</p>
+                <p>Streaming eduki plataforma profesionala.<br>SISA 1 &mdash; 1. Erronka (Uni Eibar-Ermua)</p>
             </section>
             <section>
-                <h2>Kontaktua</h2>
+                <h2>Harremanetarako</h2>
                 <address>
+                    Helbidea: Otaola Hiribidea 29, Eibar<br>
                     Tel.: <a href="tel:+34684459018">684 45 90 18</a><br>
                     Posta: <a href="mailto:vizcaino.hector@uni.eus">vizcaino.hector@uni.eus</a>
                 </address>
             </section>
             <section>
-                <h2>Taldea</h2>
-                <p>4. Taldea: Telmo, Peru, Iñigo, Hector<br>Uni Eibar-Ermua</p>
+                <h2>Taldea eta Irakasleak</h2>
+                <p>4. Taldea: I&ntilde;igo, Telmo, Peru, Hector<br>
+                <a href="../Dokumentazioa/sistemak.md" style="display: inline-block; margin-top: 6px; color: var(--urrea); font-weight: bold;">📄 Irakasleentzako Dokumentazio Teknikoa (.md)</a></p>
             </section>
         </div>
-        <p class="copyright">&copy; 2026 Artaburu Prime Video &mdash; 4. Taldea</p>
+        <p class="copyright">&copy; 2026 Artaburu Prime Video &mdash; 4. Taldea. Eskubide guztiak erreserbatuta.</p>
     </footer>
 </body>
 </html>
