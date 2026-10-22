@@ -80,46 +80,7 @@
             <div class="card-grid">
                 <article class="card">
                     <h3>1. datu base egitura(foto):</h3>
-                    
-                </article>
-            </div>
-        </section>
-
-        <!-- 5. ATALA: ACCESS ETA OSOTASUN ARAUAK -->
-        <section>
-            <h2>5. Murrizketak eta Access-eko Inplementazioa</h2>
-            <p>Microsoft Access aplikazioan inplementazio fisikoa burutzean ondorengo arauak ezarri dira:</p>
-
-            <article class="card" style="margin-bottom: 20px;">
-                <h3>Osotasun Erreferentziala eta Kaskadako Eragiketak</h3>
-                <ul>
-                    <li><strong>Erlazio guztiak:</strong> Access-eko <em>Erlazioak</em> leihoan "Exigir integridad referencial" marka aktibatu da.</li>
-                    <li><strong>Kaskadako ezabaketak:</strong> Erabiltzaile bat ezabatzen denean, haren profilak eta harpidetzak automatikoki ezabatzen dira datu zaborrik ez uzteko.</li>
-                    <li><strong>Eremuen deskribapenak:</strong> Diseinu-ikuspegian eremu bakoitzari bere iruzkin teknikoa gehitu zaio funtzioa argitzeko.</li>
-                </ul>
-            </article>
-
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Balidazio-Arauak (Validation Rules)</h3>
-                    <ul>
-                        <li><code>hileko_prezioa >= 0</code> (Ezin da prezio negatiborik egon).</li>
-                        <li><code>pantaila_maximoak >= 1</code> (Gutxienez pantaila bat).</li>
-                        <li><code>estreinaldi_urtea >= 1895</code> (Zinemaren lehen urtea).</li>
-                        <li><code>bistaratze_data &lt;= Now()</code> (Etorkizuneko datarik ez).</li>
-                        <li><code>rol_mota IN ('Infantila', 'Pertsonala', 'Familiarra')</code>.</li>
-                    </ul>
-                </article>
-
-                <article class="card">
-                    <h3>Datuak Txertatzeko Ordena Logikoa</h3>
-                    <ol>
-                        <li><strong>1. Guraso-taula independenteak:</strong> Lehenik <code>PLANAK</code> eta <code>EDUKIAK</code> bete behar dira.</li>
-                        <li><strong>2. ISA Azpimotak:</strong> Edukien xehetasunak sartu (<code>PELIKULAK</code>, <code>SERIEAK</code>, <code>DOKUMENTALAK</code>).</li>
-                        <li><strong>3. Bezeroak:</strong> <code>ERABILTZAILEAK</code> erregistroak sortu.</li>
-                        <li><strong>4. Dependentziak:</strong> <code>SUSKRIPZIOAK</code> eta <code>PROFILAK_ROLAK</code> txertatu.</li>
-                        <li><strong>5. Jarduera:</strong> Azkenik <code>BISTARATZEAK</code> gehitu.</li>
-                    </ol>
+                    <img src="argazkiak/placeholder.png">
                 </article>
             </div>
         </section>
