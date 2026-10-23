@@ -7,113 +7,38 @@
 :root {
     --gorria: #9b2929;
     --gorri-iluna: #6e1c1c;
-    --beltza: #000;
-    --panela: rgba(18, 18, 18, 0.95);
     --txartela: #1f1f1f;
     --testua: #f2f2f2;
-    --testu-argia: #bdbdbd;
-    --urrea: #e8b04a;
-    --ertza: #333;
     --borobila: 8px;
     --zabalera: 1000px;
 }
 
 /* ---------- 2. Oinarria ---------- */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
 
-html {
-    scroll-behavior: smooth;
-}
 
 body {
     margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+    font-family: Arial;
     color: var(--testua);
-    background-color: var(--beltza);
+    background-color: black;
     /* Zinema-gortinak alboetan */
     background-image:
         url("argazkiak/cortina_izquierda.jpg"),
         url("argazkiak/cortina_derecha.jpg");
     background-position: left top, right top;
-    background-repeat: repeat-y, repeat-y;
+    background-repeat: repeat-y;
     background-size: 14vw 100vh, 14vw 100vh;
     background-attachment: fixed;
 }
 
 img {
     max-width: 100%;
-    height: auto;
-    display: block;
 }
 
 a {
-    color: var(--urrea);
-}
-
-a:hover {
-    color: #fff;
-}
-
-/* Teklatuarekin nabigatzean fokua ondo ikusteko (irisgarritasuna) */
-:focus-visible {
-    outline: 3px solid var(--urrea);
-    outline-offset: 3px;
-}
-
-h1,
-h2,
-h3 {
-    line-height: 1.25;
-    color: #fff;
-}
-
-h1 {
-    font-size: 2rem;
-    margin: 0 0 16px;
-}
-
-h2 {
-    font-size: 1.4rem;
-    margin: 28px 0 10px;
-    color: var(--urrea);
-}
-
-h3 {
-    font-size: 1.1rem;
-    margin: 18px 0 8px;
-}
-
-code {
-    background: #2b2b2b;
-    color: var(--urrea);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.92em;
-}
-
-/* "Joan edukira" esteka: teklatu-erabiltzaileentzat bakarrik ikusten da */
-.skip-link {
-    position: absolute;
-    left: -9999px;
-    top: 0;
-    background: var(--urrea);
-    color: #000;
-    padding: 10px 16px;
-    z-index: 100;
-    font-weight: bold;
-}
-
-.skip-link:focus {
-    left: 10px;
-    top: 10px;
+    color: white;
 }
 
 /* ---------- 3. Goiburua eta menua ---------- */
