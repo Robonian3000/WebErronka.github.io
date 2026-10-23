@@ -29,9 +29,6 @@
     <main id="edukia" class="page">
         <h1 class="page-title">Sistema Eragileen Ezartzea: Enpresaren Zerbitzaria</h1>
 
-        <section class="intro-box">
-            <p>Enpresaren azpiegitura informatikoari eta webgune korporatiboari euskarria emateko, <strong>Windows Server</strong> zerbitzari zentral bat hedatu da VMware birtualizazio-ingurunean. Webgune osoa akatsei tolerantzia dion biltegiratze-bolumen batean ostatuta dago.</p>
-        </section>
 
         <div class="card-grid">
             <article class="card">
@@ -43,7 +40,7 @@
                     <li><strong>IP Helbidea:</strong> <code>192.168.70.9</code> (Estatikoa)</li>
                     <li><strong>Maskara:</strong> <code>255.255.255.0</code></li>
                     <li><strong>Web Zerbitzaria:</strong> IIS (Internet Information Services)</li>
-                    <li><strong>Egoera:</strong> <span class="status-ok">&#9679; Martxan eta atzigarri</span></li>
+                    <li><strong>Egoera:</strong> martxan eta atzigarri</li>
                 </ul>
             </article>
 
@@ -54,8 +51,7 @@
                     <li><strong>Bolumen Sinplea (E:):</strong> 10 GB (Disko-kuotekin)</li>
                     <li><strong>Bolumen Banatua (F:):</strong> 20 GB (2 disko batuta)</li>
                     <li><strong>RAID 1 Ispilua (G:):</strong> 10 GB (Datu bikoiztuak)</li>
-                    <li><strong>RAID 5 Paritatea (H:):</strong> 20 GB <span class="badge">Webgunea Hemen</span></li>
-                    <li><em>Webgunearen bide fisikoa:</em> <code>H:\Web_Enpresa</code></li>
+                    <li><strong>RAID 5 Paritatea (H:):</strong> 20 GB (webgunearen bide)</li>
                 </ul>
             </article>
 
@@ -71,63 +67,24 @@
             </article>
         </div>
 
-        <h2>Bolumenen laburpena</h2>
-        <div class="table-wrapper">
-            <table class="data-table">
-                <caption>Artaburu zerbitzariko datu-bolumenak</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Unitatea</th>
-                        <th scope="col">Mota</th>
-                        <th scope="col">Diskoak</th>
-                        <th scope="col">Tamaina</th>
-                        <th scope="col">Erabilera</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>E:</code></td>
-                        <td>Bolumen sinplea</td>
-                        <td>Disko 1</td>
-                        <td>10 GB</td>
-                        <td>Disko-kuotak</td>
-                    </tr>
-                    <tr>
-                        <td><code>F:</code></td>
-                        <td>Bolumen banatua</td>
-                        <td>Disko 2 + 3</td>
-                        <td>20 GB</td>
-                        <td>NTFS baimenak (<code>Enpresa_Datuak</code>)</td>
-                    </tr>
-                    <tr>
-                        <td><code>G:</code></td>
-                        <td>RAID 1 (ispilua)</td>
-                        <td>Disko 4 + 5</td>
-                        <td>10 GB</td>
-                        <td>Datu bikoiztuak</td>
-                    </tr>
-                    <tr>
-                        <td><code>H:</code></td>
-                        <td>RAID 5 (paritatea)</td>
-                        <td>Disko 6 + 7 + 8</td>
-                        <td>20 GB</td>
-                        <td>Webgunea (<code>H:\Web_Enpresa</code>)</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card-grid">
+            <article class="card">
+                <h2>Zerbitzaria eta Sarea</h2>
+                <img src="argazkiak/2 - IP konfig.png">
+            </article>
+
+            <article class="card">
+                <h2>Biltegiratzea eta RAID</h2>
+                <img src="argazkiak/15 - Raid 5.png">
+            </article>
+
+            <article class="card">
+                <h2>Segurtasuna eta Baimenak</h2>
+                <img src="argazkiak/12 - NTFS Baimenak1.png">
+                <img src="argazkiak/13 - NTFS Baimenak2.png"
+            </article>
         </div>
 
-        <h2>Babeskopiak eta disko-irudiak</h2>
-        <ul>
-            <li><strong>Windows Server Backup:</strong> eguneroko babeskopia programatua.</li>
-            <li><strong>Cobian Reflector:</strong> <code>H:\Web_Enpresa</code> karpetaren babeskopia diferentziala, Zip formatuan.</li>
-            <li><strong>Disk2vhd:</strong> disko-irudia <code>.vhdx</code> formatuan, Volume Shadow Copy erabiliz.</li>
-        </ul>
-
-        <p>Dokumentazio tekniko osoa (pantaila-argazkiekin): <a href="../Dokumentazioa/sistemak.html">Sistema eragileen dokumentazioa</a>.</p>
-    </main>
-
-    <footer class="site-footer">
         <div class="footer-inner">
             <section>
                 <h2>Harremanetarako</h2>
