@@ -13,8 +13,6 @@
     --testua: #f2f2f2;
     --testu-argia: #bdbdbd;
     --urrea: #e8b04a;
-    --berdea: #4cc27a;
-    --urdina: #3d8fd1;
     --ertza: #333;
     --borobila: 8px;
     --zabalera: 1000px;
@@ -183,10 +181,6 @@ code {
     font-weight: bold;
 }
 
-.nav-list .nav-login {
-    border: 1px solid #fff;
-}
-
 /* ---------- 4. Eduki nagusia ---------- */
 .page {
     flex: 1;
@@ -249,27 +243,6 @@ code {
     margin: 0;
 }
 
-.card-link {
-    display: inline-block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.badge {
-    display: inline-block;
-    background-color: var(--urdina);
-    color: #fff;
-    font-size: 0.8rem;
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
-.status-ok {
-    color: var(--berdea);
-    font-weight: bold;
-}
-
 /* ---------- 6. Taulak ---------- */
 .table-wrapper {
     overflow-x: auto;
@@ -305,115 +278,6 @@ code {
     background: #262626;
 }
 
-/* ---------- 7. Karrusela (hasiera-orria) ---------- */
-.zona-carrusel {
-    margin: 30px auto;
-    padding: 20px;
-    background-color: var(--beltza);
-    border: 2px solid var(--ertza);
-    border-radius: var(--borobila);
-    display: flex;
-    justify-content: center;
-}
-
-.contenedor-carrusel {
-    width: 100%;
-    max-width: 700px;
-    aspect-ratio: 7 / 3;
-    overflow: hidden;
-}
-
-.carrusel {
-    display: flex;
-    width: 500%;               /* 5 irudi x 100% */
-    height: 100%;
-    animation: deslizar 20s infinite;
-}
-
-.carrusel img {
-    flex: 0 0 20%;             /* irudi bakoitza ikuspegi osoa */
-    width: 20%;
-    height: 100%;
-    object-fit: contain;
-    padding: 5px;
-}
-
-@keyframes deslizar {
-    0%, 16%   { transform: translateX(0); }
-    20%, 36%  { transform: translateX(-20%); }
-    40%, 56%  { transform: translateX(-40%); }
-    60%, 76%  { transform: translateX(-60%); }
-    80%, 96%  { transform: translateX(-80%); }
-    100%      { transform: translateX(0); }
-}
-
-/* Mugimendua murriztu nahi duten erabiltzaileentzat (irisgarritasuna) */
-@media (prefers-reduced-motion: reduce) {
-    .carrusel {
-        animation: none;
-    }
-
-    .contenedor-carrusel {
-        overflow-x: auto;
-    }
-
-    html {
-        scroll-behavior: auto;
-    }
-}
-
-/* ---------- 8. Formularioa (saioa hasi) ---------- */
-.login-form {
-    max-width: 420px;
-    margin: 20px auto;
-    padding: 25px;
-    background: var(--txartela);
-    border: 1px solid var(--ertza);
-    border-radius: var(--borobila);
-}
-
-.login-form label {
-    display: block;
-    margin: 12px 0 6px;
-    font-weight: bold;
-}
-
-.login-form input[type="email"],
-.login-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background: #111;
-    color: #fff;
-    font-size: 1rem;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 24px;
-    background: var(--gorria);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover,
-.button:focus-visible {
-    background: var(--gorri-iluna);
-}
-
-.form-note {
-    text-align: center;
-    color: var(--testu-argia);
-    font-size: 0.9rem;
-}
-
 /* ---------- 9. Oina (footer) ---------- */
 .site-footer {
     background-color: var(--beltza);
@@ -445,29 +309,4 @@ code {
     margin: 0;
     padding: 10px;
     border-top: 1px solid var(--ertza);
-}
-
-/* ---------- 10. Mugikorrak eta pantaila txikiak ---------- */
-@media (max-width: 700px) {
-    body {
-        background-image: none;   /* gortinak kendu lekua irabazteko */
-    }
-
-    .page {
-        width: calc(100% - 20px);
-        padding: 20px 15px;
-        margin: 15px auto;
-    }
-
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    .header-inner {
-        justify-content: center;
-    }
-
-    .nav-list {
-        justify-content: center;
-    }
 }
