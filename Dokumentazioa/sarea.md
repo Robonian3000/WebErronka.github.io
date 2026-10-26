@@ -6,6 +6,40 @@
 
 Sarearen azpiegitura fisikoak OSI ereduaren lehenengo bi geruzak hartzen ditu barne:
 - **1. Maila (Geruza Fisikoa):** Seinaleen transmisioa, kableatu fisikoa, konektoreak eta tentsio-mailak.
+
+Maila fisikoan 3 zati daude, kableen **arrak**, **emeak** eta **patch panel erako konexioa**.
+
+<br>
+
+- **Hemen emea nola egiten den ikusten da**
+
+| | |
+|:---:|:---:|
+| <img src="./Argazkiak sarea/emea1.jpeg" width="150"> <br> kablea zuritu behar da | <img src="./Argazkiak sarea/emea2.jpeg" width="150"> <br> gero kabletxo bakoitza banatu
+| <img src="./Argazkiak sarea/emea3.jpeg" width="150"> <br> kable bakoitza bere tokian jarri | <img src="./Argazkiak sarea/emea4.jpeg" width="150"> <br> azkenik presionatu  inpaktuko krinpagailuarekin
+
+<br>
+
+- **Hemen arra nola egiten den ikusten da**
+
+| | |
+|:---:|:---:|
+| <img src="./Argazkiak sarea/arra1.png" width="150"> <br> lehenik kablea zuritu | <img src="./Argazkiak sarea/arra2.png" width="150"> <br> gero kabletxo bakoitza banatu
+| <img src="./Argazkiak sarea/arra3.png" width="150"> <br> kabletxoak ordenean jarri eta moztu | <img src="./Argazkiak sarea/arra4.png" width="150"> <br> azkenik sartu rj45 buruan eta krinpatu
+
+<br>
+
+- **eta azkenik Hemen patch panel eko konexioa nola egiten den ikusten da**
+
+| | |
+|:---:|:---:|
+| <img src="./Argazkiak sarea/panel1.jpeg" width="150">  | <img src="./Argazkiak sarea/panel2.jpeg" width="150">
+| <img src="./Argazkiak sarea/panel3.jpeg" width="150"> |
+
+- **patch panel-eko konexioak egiteko kabletxo bakoitza bere kolorean jarri eta inpaktuko krinpagailuarekin presioa egin**
+
+<br>
+
 - **2. Maila (Datu-Loturaren Geruza):** Helbideratze fisikoa (MAC helbideak), kommutazioa (Switch-a), erroreen detekzioa (CRC) eta markoen kudeaketa.
 
 ```mermaid
@@ -49,6 +83,8 @@ ASCII kode estandarraren arabera (8 bit / karaktere bakoitzeko), ondorengo bihur
 | **3** | 51 | `00110011` |
 | **@** | 64 | `01000000` |
 
+![photo](./Argazkiak%20sarea/ASCII-BITAR.jpeg)
+
 **Transmititu beharreko mezu bitar osoa ($M$):**
 `01000001 01100100 01101101 01101001 01101110 00110001 00110010 00110011 01000000`
 
@@ -64,7 +100,7 @@ $$G(x) = x^6 + x^5 + x^3 + x^2 + x + 1$$
 Polinomioaren koefiziente bitarrak:
 - $x^6 \rightarrow 1$
 - $x^5 \rightarrow 1$
-- $x^4 \rightarrow 0$
+- $x^4 \rightarrow 0$ (ez dagoenez 0 da.)
 - $x^3 \rightarrow 1$
 - $x^2 \rightarrow 1$
 - $x^1 \rightarrow 1$
@@ -78,8 +114,17 @@ Divisorea: **`1 1 0 1 1 1 1`** (7 bit, beraz $k = 6$ zero gehituko zaizkio mezua
    - Zatiketa binarioa egiten da XOR eragiketa aplikatuz (bit berdinak = 0, bit ezberdinak = 1; ez dago eramaterik/acarreo).
    - Zatikizunaren lehen bita `1` denean, zatitzailea azpian jartzen da eta XOR egiten da.
    - Lehen bita `0` denean, eskuinera mugitzen da hurrengo `1` bita aurkitu arte.
-3. **Hondarra ($R$):** Zatiketa amaitzean lortzen den 6 biteko hondarra da **CRC-6-GSM kodea**.
+3. **Hondarra ($R$):** Zatiketa amaitzean lortzen den 6 biteko hondarra da, Gure kasuan **001001** da.
 4. **Transmititutako Kodetutako Mezua:** Jatorrizko mezuari kalkulatutako 6 biteko hondarra gehitzen zaio amaieran: $T(x) = M(x) \cdot x^6 \oplus R(x)$. Hartzaileak mezu bera jasotzean polinomio berarekin zatituko du; hondarra `000000` bada, mezua osorik eta errorerik gabe iritsi dela bermatzen da.
+
+<br>
+
+[Kalkulu orrian eginda](https://docs.google.com/spreadsheets/d/1HKA2vaXFDSeuvVC_ZqdlqpXQHusKf2Zk/edit?usp=drive_link&ouid=105279118248341423475&rtpof=true&sd=true)
+
+<br>
+
+[Kalkulu orrian verifikatuta](https://docs.google.com/spreadsheets/d/1CP1PdVYuvN1_hyWiGUnZD6gbDN7MnA17/edit?usp=drive_link&ouid=105279118248341423475&rtpof=true&sd=true)
+
 
 ---
 
@@ -88,7 +133,7 @@ Divisorea: **`1 1 0 1 1 1 1`** (7 bit, beraz $k = 6$ zero gehituko zaizkio mezua
 Bitarrezko seinalea sareko euskarri fisikotik (uhin bidez edo kablez) garraiatzeko seinale garraiatzaile baten parametroak modulatzen dira:
 
 ```
-Mezua:   |  1  |  0  |  1  |  1  |  0  |
+Mezua:  | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 ```
 
 1. **ASK (Amplitude Shift Keying - Anplitude Modulazioa):**
@@ -102,6 +147,13 @@ Mezua:   |  1  |  0  |  1  |  1  |  0  |
 3. **PSK (Phase Shift Keying - Fase Modulazioa):**
    - `1` bita eta `0` bita adierazteko seinalearen fasea 180º aldatzen da (uhina goitik hasi beharrean behetik hasten da).
    - Banda-zabalera hobekien aprobetxatzen duen modulazio metodoa da.
+  
+
+
+  **Paperean eginda:**
+ ![ONDAK](<Argazkiak sarea/PSK(2)-ASK(2)-FSK(2).jpg>)
+   **Ordenagailuan garbira pasatuta:**
+ ![ONDAK-GARBI](<Argazkiak sarea/onda_PSK2_ASK2_FSK2_solo_bits.png>)
 
 ---
 
@@ -113,6 +165,12 @@ Datu-loturaren geruzan seinale digitala sinkronizatzeko **Manchester kodifikazio
 - **`1` Bitarra:** Goitik beherako trantsizioa (High &rarr; Low).
 - **Abantaila:** Seinaleak ez du osagai jarraiturik (DC) metatzen eta akatsak berehala detektatzen dira erdiko trantsiziorik ez badago.
 
+<br>
+
+- **argazkiko lehen grafikoa manchester-a da**
+- **argazkiko bigarren grafikoa clock-a da**
+- **argazkiko hirugarren grafikoa diferentziala da**
+![Manchester](<Argazkiak sarea/MANCHESTER.jpeg>)
 ---
 
 ## 6. Haririk Gabeko Egiaztapena (Wi-Fi Proba)
