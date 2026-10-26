@@ -12,6 +12,9 @@ body {
     background-size: 14vw 100vh;
     background-attachment: fixed;
 }
+img {
+    max-width: 100%;
+}
 
 a { color: #fff; }
 

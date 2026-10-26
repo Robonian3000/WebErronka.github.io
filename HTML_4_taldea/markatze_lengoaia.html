@@ -36,9 +36,9 @@
             <h2>1. HTML egitura semantikoa</h2>
             <p>Orri guztiek egitura bera dute, hiru atal nagusitan banatuta:</p>
             <ul>
-                <li><code>&lt;header&gt;</code>: goiburua, logotipoa eta nabigazio-menua (<code>&lt;nav&gt;</code>).</li>
-                <li><code>&lt;main&gt;</code>: orriaren eduki nagusia, <code>&lt;section&gt;</code> eta <code>&lt;article&gt;</code> elementuetan antolatuta.</li>
-                <li><code>&lt;footer&gt;</code>: enpresaren informazioa eta kontaktua (<code>&lt;address&gt;</code>).</li>
+                <li>header: goiburua, logotipoa eta nabigazio-menua nav.</li>
+                <li>main: orriaren eduki nagusia, section eta article elementuetan antolatuta.</li>
+                <li>footer: enpresaren informazioa eta kontaktua.</li>
             </ul>
         </section>
 
@@ -46,74 +46,42 @@
             <h2>2. Erabilitako elementu nagusiak</h2>
             <div >
                 <table class="data-table">
-                    <caption>Webgunean erabilitako HTML elementuak</caption>
                     <thead>
                         <tr>
                             <th scope="col">Elementua</th>
                             <th scope="col">Erabilera</th>
-                            <th scope="col">Non</th>
+                            <th scope="col">Argazkia</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code>&lt;h1&gt;</code> &ndash; <code>&lt;h3&gt;</code></td>
+                            <td>h1,h2,h3</td>
                             <td>Izenburuak, hierarkia argiarekin</td>
-                            <td>Orri guztiak</td>
+                            <td> <img src="argazkiak/h1_adibidea.png" alt="h1"> <img src="argazkiak/h2_adibidea.png" alt="h1"> <img src="argazkiak/h3_adibidea.png" alt="h1"> </td>
                         </tr>
                         <tr>
-                            <td><code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code></td>
+                            <td>ul,li
                             <td>Zerrendak eta menua</td>
-                            <td>Orri guztiak</td>
+                            <td> <img src="argazkiak/ul_eta_li_adibidea.png" alt="ul eta li"> </td>
                         </tr>
                         <tr>
-                            <td><code>&lt;table&gt;</code></td>
+                            <td>table</td>
                             <td>Datu taularrak</td>
-                            <td>Zerbitzaria, Markatze lengoaiak</td>
+                            <td> <img src="argazkiak/tabla_adibidea.png" alt="tabla"> </td>
                         </tr>
                         <tr>
-                            <td><code>&lt;img&gt;</code></td>
-                            <td>Irudiak, <code>alt</code> testuarekin</td>
-                            <td>Hasiera (karrusela)</td>
+                            <td>img</td>
+                            <td>Irudiak, alt testuarekin</td>
+                            <td> <img src="argazkiak/argazkia_adibidea.png" alt="argazkiak"> </td>
                         </tr>
                         <tr>
-                            <td><code>&lt;a&gt;</code></td>
+                            <td>a</td>
                             <td>Orrien arteko estekak</td>
-                            <td>Menua eta txartelak</td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;form&gt;</code></td>
-                            <td>Saioa hasteko formularioa</td>
-                            <td>Saioa hasi</td>
+                            <td> <img src="argazkiak/linka_adibidea.png" alt="linka"> </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </section>
-
-        <section>
-            <h2>3. CSS estiloak</h2>
-            <p>Estilo guztiak kanpoko fitxategi bakar batean daude (<code>style.css</code>), klase izen deskriptiboekin:</p>
-            <ul>
-                <li><strong>Aldagaiak</strong> (<code>:root</code>): kolore korporatiboak leku bakarrean.</li>
-                <li><strong>Kutxa-eredua</strong>: <code>margin</code>, <code>padding</code> eta <code>border</code> propietateak.</li>
-                <li><strong>Diseinua</strong>: <code>display: flex</code> menuan eta <code>display: grid</code> txarteletan.</li>
-                <li><strong>Karrusela</strong>: CSS animazioa (<code>@keyframes</code>), JavaScript gabe.</li>
-                <li><strong>Responsive</strong>: <code>@media</code> kontsultak mugikorretarako.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>4. Irisgarritasuna</h2>
-            <ul>
-                <li>Hizkuntza zehaztuta (<code>lang="eu"</code>).</li>
-                <li>Irudi guztiek <code>alt</code> testua dute.</li>
-                <li>"Joan edukira" esteka teklatu-erabiltzaileentzat.</li>
-                <li>Uneko orria menuan markatuta (<code>aria-current</code>).</li>
-                <li>Fokua ondo ikusten da teklatuarekin nabigatzean.</li>
-                <li>Formularioko eremu bakoitzak bere <code>&lt;label&gt;</code> du.</li>
-                <li>Karruselaren animazioa gelditzen da mugimendua murriztu nahi duten erabiltzaileentzat.</li>
-                <li>Testuaren eta atzeko planoaren arteko kontraste handia.</li>
-            </ul>
         </section>
     </main>
 
