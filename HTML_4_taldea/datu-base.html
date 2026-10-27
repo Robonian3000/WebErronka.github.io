@@ -26,79 +26,64 @@
     </header>
 
     <main id="edukia" class="page">
-        <h1>Datu-basea: Streaming Plataforma</h1>
-
-        <section class="intro-box">
-            <p><strong>Artaburu Prime Video</strong> streaming multimedia zerbitzua kudeatzeko datu-base erlazionalaren azterketa eta inplementazio teknikoa. Plataformak erabiltzaileak, harpidetza-planak, profil anitzak (rolak), ikus-entzunezko edukiak (ISA hierarkia: pelikulak, serieak eta dokumentalak) eta erreprodukzio-historiala (bistaratzeak) kudeatzen ditu.</p>
-        </section>
-
-        <section>
-            <h2>1. ER (entitate relazio) diagrama</h2>
-            <p>Enpresak datuak fitxategi lauetan (Excel, CSV edo testu-fitxategietan) gorde beharrean, <strong>Datu-Baseak Kudeatzeko Sistema (DBKS / RDBMS)</strong> baten bidez kudeatzea erabaki du, ondorengo onura nagusiak bermatuz:</p>
-
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Gure diagrama (foto):</h3>
-                    <img src="argazkiak/placeholder.png">
-                </article>
-            </div>
-
-            <div class="intro-box" style="margin-top: 20px;">
-                <p><strong>Zer gertatuko litzateke datuak modu ez-egokian gordeko balira?</strong><br>
-                Fitxategi arruntetan edo normalizatu gabeko tauletan, <em>txertatze-anomaliak</em> (ezingo litzateke plan berririk sortu bezerorik gabe), <em>aldaketa-anomaliak</em> (datu bat leku batean aldatu eta bestean zaharkituta geratzea) eta <em>ezabatze-anomaliak</em> (bezero bat ezabatzean planaren informazio osoa galtzea) gertatuko lirateke.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>2. datu base deskribapena</h2>
+    <h1>Datu-basea: Streaming Plataforma</h1>
+        <h2>1. datu base deskribapena</h2>
             <article class="card" style="margin-top: 15px;">
-                <p>
-                Streaming plataforma ezagun batek bere datu-basea berritu nahi du. Honako
-                hau da lana egiteko jaso dugun informazioa:
-                Erabiltzaileei buruz honako datu hauek gorde nahi dira: ID-Erabiltzailea, izena,
-                abizena, NAN, telefonoa eta e-maila.
-                Plataformak hainbat plan eskaintzen ditu, eta bakoitzak bere ID-Plana,
-                oinarrizkoa, oinarrizkoa iragarkiekin eta premiuma. Erabiltzaile bakoitzak
-                gutxienez plan bat kontratatu behar du zerbitzua erabiltzeko eta noski, plan
-                bakoitza erabiltzaile askok kontratatuko dute.
-                Plan bakoitzak harpidetza bakarra izaten du lotuta, eta plan bakoitzari gutxienez
-                harpidetza bat dagokio. Harpidetza bakoitzak bere Id-Harpidetza, hasiera-data
-                eta amaiera-data izango du. Harpidetza bakoitza plan bakar bat edo gehiagori
-                egongo da beti lotuta.
-                Erabiltzaile bakoitzak bere kontuaren barruan Rol bat baina gehiago kudeatu
-                ditzake. Rol-ei buruz informazio hau dugu: ID-Rola, infantila, familiarra eta
-                pertsonala. Rol bakoitza erabiltzaile bakar bati dagokio.
-                Plataforman mota askotako edukiak daude eskuragarri. Eduki bakoitzari buruz
-                bere ID-Edukia eta izenburua jakin nahi dira. Edukiak hiru motatakoak izan
-                daitezke: Serieak, Pelikulak edo Dokumentalak.
-                Rol bakoitzak edukiak bistaratu ditzake. Rol batek gutxienez eduki bat ikusiko
-                du, eta eduki bakoitza gutxienez rol batek baina gehiago ikusiko du. Rol batek
-                eduki bat ikusten duen bakoitzean, bistaratze hori erregistratu nahi da, ikustaldi
-                horren informazioa gordez.
-                Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango
-                ditu. Denboraldi bakoitza serie bakar batekoa da, eta ID-Denboraldia kodeaz
-                gain, bere zenbakia gordetzen da. Era berean, denboraldi bakoitzak gutxienez
-                kapitulu asko izango ditu, eta kapitulu bakoitza denboraldi zehatz bati dagokio.
+                <p>Streaming plataforma ezagun batek bere datu-basea berritu nahi du. Honako
+                    hau da lana egiteko jaso dugun informazioa:</p>
+                <p>buruz honako datu hauek gorde nahi dira: ID-Erabiltzailea, izena,
+                    abizena, NAN, telefonoa eta e-maila.</p>
+                <p>Plataformak hainbat plan eskaintzen ditu, eta bakoitzak bere ID-Plana,
+                    oinarrizkoa, oinarrizkoa iragarkiekin eta premiuma. Erabiltzaile bakoitzak
+                    gutxienez plan bat kontratatu behar du zerbitzua erabiltzeko eta noski, plan
+                    bakoitza erabiltzaile askok kontratatuko dute.</p>
+                <p> Plan bakoitzak harpidetza bakarra izaten du lotuta, eta plan bakoitzari gutxienez
+                    harpidetza bat dagokio. Harpidetza bakoitzak bere Id-Harpidetza, hasiera-data
+                    eta amaiera-data izango du. Harpidetza bakoitza plan bakar bat edo gehiagori
+                    egongo da beti lotuta.</p>
+                <p>Erabiltzaile bakoitzak bere kontuaren barruan Rol bat baina gehiago kudeatu
+                    ditzake. Rol-ei buruz informazio hau dugu: ID-Rola, infantila, familiarra eta
+                    pertsonala. Rol bakoitza erabiltzaile bakar bati dagokio.</p>
+                <p> Plataforman mota askotako edukiak daude eskuragarri. Eduki bakoitzari buruz
+                    bere ID-Edukia eta izenburua jakin nahi dira. Edukiak hiru motatakoak izan
+                    daitezke: Serieak, Pelikulak edo Dokumentalak.</p>
+                <p>Rol bakoitzak edukiak bistaratu ditzake. Rol batek gutxienez eduki bat ikusiko
+                    du, eta eduki bakoitza gutxienez rol batek baina gehiago ikusiko du. Rol batek
+                    eduki bat ikusten duen bakoitzean, bistaratze hori erregistratu nahi da, ikustaldi
+                    horren informazioa gordez.</p>
+                <p>Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango
+                    ditu. Denboraldi bakoitza serie bakar batekoa da, eta ID-Denboraldia kodeaz
+                    gain, bere zenbakia gordetzen da. Era berean, denboraldi bakoitzak gutxienez
+                    kapitulu asko izango ditu, eta kapitulu bakoitza denboraldi zehatz bati dagokio.
                 </p>
             </article>
+
+        <section>
+            <h2>2. ER (entitate relazio) diagrama</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Gure diagrama:</h3>
+                    <img src="argazkiak/CP-DatuBasea-Erronka1.png">
+                </article>
+            </div>
         </section>
 
         <section>
             <h2>3. erlazioanala</h2>
-            <p> Diseinatutako eredu erlazionalak normalizazioaren hiru arau nagusiak zorrotz betetzen dituela bermatu da</p>
                 <article class="card">
-                    <p>HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)</p>
-                    <p>PLANA (ID-Plana, ID-Harpidetza, Oinarrizkoa iragarkiekin, Oinarrizkoa, Premiuma)</p>
-                    <p>ERABILTZAILEA (ID-Erabiltzailea, ID-Plana, Izena, Abizena, NAN, Mugikor zenbakia,</p>
-                    <p>E-maila)
-                    <p>ROLA (ID-Rola, ID-Erabiltzailea, izena)</p>
-                    <p>IKUSI (ID-Izena, ID-Edukia, Bistaratzea)</p>
-                    <p>EDUKIA (ID-Edukia, Izenburua, Mota)</p>
-                    <p>PELIKULAK (Zuzendaria, Iraupena_min)</p>
-                    <p>DOKU (Gaia, Iraupena_min)</p>
-                    <p>SERIEAK</p>
-                    <p>DENBORALDIAK (ID-Denboraldia, ID-Edukia, Zenbakia)</p>
-                    <p>KAPITULUAK (ID-Kapitulua, ID-Denboraldiak, Izena)</p>
+                    <ul>
+                        <li>HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)</li>
+                        <li>PLANA (ID-Plana, ID-Harpidetza, Oinarrizkoa iragarkiekin, Oinarrizkoa, Premiuma)</li>
+                        <li>ERABILTZAILEA (ID-Erabiltzailea, ID-Plana, Izena, Abizena, NAN, Mugikor zenbakia, E-maila)</li>
+                        <li>ROLA (ID-Rola, ID-Erabiltzailea, izena)</li>
+                        <li>IKUSI (ID-Izena, ID-Edukia, Bistaratzea)</li>
+                        <li>EDUKIA (ID-Edukia, Izenburua, Mota)</li>
+                        <li>PELIKULAK (Zuzendaria, Iraupena_min)</li>
+                        <li>DOKU (Gaia, Iraupena_min)</li>
+                        <li>SERIEAK</li>
+                        <li>DENBORALDIAK (ID-Denboraldia, ID-Edukia, Zenbakia)</li>
+                        <li>KAPITULUAK (ID-Kapitulua, ID-Denboraldiak, Izena)</li>
+                    </ul>
                 </article>
         </section>
 
