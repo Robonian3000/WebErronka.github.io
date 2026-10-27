@@ -14,14 +14,17 @@ nagusiak hauek dira:
 
 -   **`<header>`**: webgunearen goiko zatia da. Bertan webgunearen izena
     edo marka eta nabigazio-menua agertzen dira.
+    ![header argazkia html](Argazkiak_markatze_lengoaia/header_adibidea.png)
 -   **`<nav>`**: nabigazio-menua biltzen du. Menu horretako estekek
     webguneko beste orri batzuetara eramaten dute.
 -   **`<main>`**: orriaren eduki nagusia gordetzen du.
+    ![main argazkia](Argazkiak_markatze_lengoaia/main_adibidea.png)
 -   **`<section>`**: edukia ataletan banatzeko erabiltzen da.
 -   **`<article>`**: bere kabuz uler daitekeen eduki-bloke bat
     antolatzeko erabil daiteke.
 -   **`<footer>`**: orriaren beheko zatia da. Harremanetarako
     informazioa eta taldeari buruzko datuak jartzeko erabiltzen da.
+    ![footer argazkia](Argazkiak_markatze_lengoaia/footer_adibidea.png)
 
 HTML elementu semantiko horiei esker, kodea antolatuagoa eta ulertzeko
 errazagoa da.
@@ -39,6 +42,7 @@ Menuan, besteak beste, honako ataletarako estekak agertzen dira:
 -   Zerbitzaria
 -   Digitalizazioa
 -   Markatze-lengoaia
+![nabigazio menua argazkia](Argazkiak_markatze_lengoaia/nabigazio_meuna.png)
 
 Estekak HTMLko **`<a>`** etiketarekin sortzen dira. `href` atributuak
 estekak zein HTML fitxategi edo helbidetara joan behar duen adierazten
@@ -60,9 +64,12 @@ antolatzeko, `<section>` eta `<article>` elementuak erabiltzen dira.
 Izenburuak hierarkikoki antolatzen dira:
 
 -   **`<h1>`**: orriaren izenburu nagusia da.
+    ![h1 argazkia](Argazkiak_markatze_lengoaia/h1_adibidea.png)
 -   **`<h2>`**: atal nagusien izenburuetarako erabiltzen da.
+    ![h2 argazkia](Argazkiak_markatze_lengoaia/h2_adibidea.png)
 -   **`<h3>`**: azpiatalak edo maila txikiagoko izenburuak adierazteko
     erabiltzen da.
+    ![h3 argazkia](Argazkiak_markatze_lengoaia/h3_adibidea.png)
 
 Izenburu-mailak ordenan erabiltzea komeni da, edukiaren egitura argia
 izan dadin. Adibidez, orri batean `<h1>` bat egon daiteke, eta haren
@@ -78,6 +85,7 @@ Elementuak zerrenda batean aurkezteko, bi etiketa mota erabiltzen dira:
 
 -   **`<ul>`**: ordenarik gabeko zerrenda sortzen du.
 -   **`<li>`**: zerrendako elementu bakoitza adierazten du.
+    
 
 Adibidea:
 
@@ -88,6 +96,7 @@ Adibidea:
   <li>RAID 1 ispilua</li>
 </ul>
 ```
+![ul eta li argazkia](Argazkiak_markatze_lengoaia/ul_eta_li_adibidea.png)
 
 Zerrenda mota hori erabilgarria da hainbat kontzeptu edo ezaugarri modu
 argian aurkezteko.
@@ -103,6 +112,7 @@ Adibidea:
 ``` html
 <img src="argazkiak/12 - NTFS Baimenak1.png" alt="Baimenak">
 ```
+![argazkia adibidea](Argazkiak_markatze_lengoaia/argazkia_adibidea.png)
 
 Irudiak karpeta batean gordetzen badira, `src` atributuko bidea
 karpetaren eta fitxategiaren izenarekin bat etorri behar da.
@@ -144,6 +154,7 @@ Adibideetan, taulak `data-table` klasea dauka:
 ```
 
 Taulak informazioa modu ordenatuan konparatzeko edo aurkezteko balio du.
+![taula argazkia](Argazkiak_markatze_lengoaia/tabla_adibidea.png)
 
 ## 8. CSS eta `class` atributua
 
@@ -166,6 +177,8 @@ CSS fitxategian, klase hori puntu batekin idazten da:
   background: black;
 }
 ```
+![class argazkia](Argazkiak_markatze_lengoaia/class_en_css_adibidea.png)
+![class argazkia](Argazkiak_markatze_lengoaia/class_en_html_adibidea.png)
 
 Kode horretan:
 
@@ -192,6 +205,7 @@ telefono-zenbaki bati deitzeko esteka egiteko, berriz, `tel:`:
 <a href="mailto:adibidea@posta.eus">Bidali posta elektronikoa</a>
 <a href="tel:+34123456789">Deitu</a>
 ```
+![linka argazkia](Argazkiak_markatze_lengoaia/linka_adibidea.png)
 
 Adibideko helbideak ordezkatu egin behar dira webgunean benetako
 harremanetarako datuak jarri behar badira.
