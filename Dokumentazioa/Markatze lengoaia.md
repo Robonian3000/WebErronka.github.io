@@ -1,98 +1,215 @@
-# Markatze Lengoaiak: Webgunearen Egitura eta Estiloak
+# Webgunearen dokumentazioa
 
----
+## 1. Sarrera
 
-## 1. Webgunearen Egitura Semantikoa (HTML5)
+Dokumentu honetan webgunea osatzen duten HTML elementu nagusiak eta
+diseinua kontrolatzeko erabiltzen den CSS kodea azaltzen dira. Webguneak
+hainbat atal ditu, eta goiko nabigazio-menuaren bidez atal batetik
+bestera joan daiteke erabiltzailea.
 
-Proiektu honetan garatutako webgunea (**Artaburu Prime Video**) HTML5 estandarrak zorrotz jarraituz eraiki da. Orrialde guztiek egitura semantiko homogeneo eta irisgarria dute, hiru atal nagusitan banatuta:
+## 2. Webgunearen egitura
 
-```mermaid
-flowchart TD
-    subgraph Orria["HTML5 Orri Semantikoa"]
-        H["&lt;header class='site-header'&gt;<br/>Marka / Logo + &lt;nav&gt; Menua"]
-        M["&lt;main id='edukia' class='page'&gt;<br/>Eduki nagusia (&lt;section&gt; eta &lt;article&gt;)"]
-        F["&lt;footer class='site-footer'&gt;<br/>Enpresaren datuak + &lt;address&gt; + Egileak"]
-    end
-    H --> M --> F
+Webgunearen egitura nagusia HTML etiketen bidez antolatuta dago. Atal
+nagusiak hauek dira:
+
+-   **`<header>`**: webgunearen goiko zatia da. Bertan webgunearen izena
+    edo marka eta nabigazio-menua agertzen dira.
+-   **`<nav>`**: nabigazio-menua biltzen du. Menu horretako estekek
+    webguneko beste orri batzuetara eramaten dute.
+-   **`<main>`**: orriaren eduki nagusia gordetzen du.
+-   **`<section>`**: edukia ataletan banatzeko erabiltzen da.
+-   **`<article>`**: bere kabuz uler daitekeen eduki-bloke bat
+    antolatzeko erabil daiteke.
+-   **`<footer>`**: orriaren beheko zatia da. Harremanetarako
+    informazioa eta taldeari buruzko datuak jartzeko erabiltzen da.
+
+HTML elementu semantiko horiei esker, kodea antolatuagoa eta ulertzeko
+errazagoa da.
+
+## 3. Goiburua eta nabigazio-menua
+
+Goiburua (`<header>`) webgunearen goialdean dago. Bertan, **Arta(b)uru
+prime video** izena agertzen da, eta horren ondoan nabigazio-menua dago.
+
+Menuan, besteak beste, honako ataletarako estekak agertzen dira:
+
+-   Hasierara
+-   Datu-basea
+-   Sarea
+-   Zerbitzaria
+-   Digitalizazioa
+-   Markatze-lengoaia
+
+Estekak HTMLko **`<a>`** etiketarekin sortzen dira. `href` atributuak
+estekak zein HTML fitxategi edo helbidetara joan behar duen adierazten
+du. Adibidez:
+
+``` html
+<a href="datu-base.html">Datu-basea</a>
 ```
 
-1. **`<header>` (Goiburua):**
-   - Plataformaren marka korporatiboa (`Artaburu Prime Video`).
-   - `<nav aria-label="Menu nagusia">`: Orrien arteko nabigazio-menua zerrenda ez-ordenatu batean (`<ul>`, `<li>`), esteka bakoitzak dagokion orrira bideratuz.
-   - `aria-current="page"` atributua uneko orria erabiltzaileari eta pantaila-irakurleei nabarmentzeko.
+Menuan `aria-label` edo `aria-current` bezalako atributuak ere erabil
+daitezke. Horiek nabigazioa hobeto deskribatzen eta irisgarritasuna
+hobetzen laguntzen dute.
 
-2. **`<main id="edukia">` (Eduki Nagusia):**
-   - Orri bakoitzaren funtsezko edukia gordetzen du.
-   - `<section>`: Atal tematiko nagusiak definitzeko (sarrera, katalogoa, taulak, formularioko guneak).
-   - `<article>`: Eduki autonomoak eta txartelak (filmak, serieak, dokumentalak, planak).
+## 4. Eduki nagusia eta izenburuak
 
-3. **`<footer>` (Orri-oina):**
-   - Enpresaren informazio orokorra.
-   - `<address>`: Harremanetarako bide ofizialak (posta elektronikoa eta telefonoa `mailto:` eta `tel:` estekekin).
-   - 4. Taldeko partaideen izenak eta egile-eskubideen oharra.
+Eduki nagusia **`<main>`** elementuaren barruan dago. Atalak
+antolatzeko, `<section>` eta `<article>` elementuak erabiltzen dira.
 
----
+Izenburuak hierarkikoki antolatzen dira:
 
-## 2. Erabilitako HTML Elementu Teknikoak
+-   **`<h1>`**: orriaren izenburu nagusia da.
+-   **`<h2>`**: atal nagusien izenburuetarako erabiltzen da.
+-   **`<h3>`**: azpiatalak edo maila txikiagoko izenburuak adierazteko
+    erabiltzen da.
 
-Rúbrikak eskatzen dituen elementu guztiak inplementatu dira:
+Izenburu-mailak ordenan erabiltzea komeni da, edukiaren egitura argia
+izan dadin. Adibidez, orri batean `<h1>` bat egon daiteke, eta haren
+azpian hainbat `<h2>` eta `<h3>`.
 
-| Elementua | Erabilera / Funtzioa | Kokapena Webgunean |
-| :--- | :--- | :--- |
-| `<h1>` &ndash; `<h3>` | Izenburuen hierarkia semantikoa (mailak salto egin gabe) | Orrialde guztietan |
-| `<ul>`, `<ol>`, `<li>` | Zerrenda ordenatuak (urratsak) eta desordenatuak (menua, ezaugarriak) | Menua, txartelak eta gidak |
-| `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>` | Datu teknikoak taularatzeko (planen prezioak, datu-baseko taulak, elementuen laburpena) | `Datu-base.html`, `markatze_lengoaia.html` |
-| `<img>` | Irudiak eta kartelak, beti `alt` testu deskribatzailearekin | Hasiera (karrusela eta katalogoa) |
-| `<a>` | Barne-estekak, orrien arteko jauziak eta kanpoko estekak | Nabigazio-menua eta footer-a |
-| `<form>`, `<input>`, `<select>`, `<button>` | Saioa hasteko eta streaming-eko profila aukeratzeko formularioa | `index.html` (Saioa hasi) |
-| `<address>` | Kontakturako informazio semantikoa | Orri guztietako oina |
+## 5. Testua eta zerrendak
 
----
+Informazioa azaltzeko, HTMLko paragrafoak erabiltzen dira, hau da,
+**`<p>`** etiketak. Testua atal txikietan banatzeak irakurketa errazten
+du.
 
-## 3. Estilo Orriak eta Kutxa Eredua (CSS3)
+Elementuak zerrenda batean aurkezteko, bi etiketa mota erabiltzen dira:
 
-Estilo guztiak kanpoko fitxategi bakar batean antolatuta daude ([`style.css`](../HTML_4_taldea/style.css)), estiloak zuzenean HTML etiketetan txertatzea saihestuz (*no inline styles*).
+-   **`<ul>`**: ordenarik gabeko zerrenda sortzen du.
+-   **`<li>`**: zerrendako elementu bakoitza adierazten du.
 
-### A. Aldagai Korporatiboak (`:root`)
-Diseinu koherentea bermatzeko CSS aldagaiak erabiltzen dira:
-```css
-:root {
-    --gorria: #9b2929;
-    --gorri-iluna: #6e1c1c;
-    --beltza: #000;
-    --txartela: #1f1f1f;
-    --testua: #f2f2f2;
-    --urrea: #e8b04a;
-    --berdea: #4cc27a;
-    --ertza: #333;
-    --borobila: 8px;
-    --zabalera: 1000px;
+Adibidea:
+
+``` html
+<ul>
+  <li>Partizio-taula</li>
+  <li>Bolumen sinplea</li>
+  <li>RAID 1 ispilua</li>
+</ul>
+```
+
+Zerrenda mota hori erabilgarria da hainbat kontzeptu edo ezaugarri modu
+argian aurkezteko.
+
+## 6. Irudiak
+
+Irudiak txertatzeko **`<img>`** etiketa erabiltzen da. `src` atributuak
+irudiaren fitxategiaren kokapena adierazten du, eta `alt` atributuak
+irudiaren ordezko deskribapena ematen du.
+
+Adibidea:
+
+``` html
+<img src="argazkiak/12 - NTFS Baimenak1.png" alt="Baimenak">
+```
+
+Irudiak karpeta batean gordetzen badira, `src` atributuko bidea
+karpetaren eta fitxategiaren izenarekin bat etorri behar da.
+Fitxategi-izenetan letra larriak, letra xeheak, espazioak eta luzapenak
+ondo idatzi behar dira; bestela, irudia ez agertzea gerta daiteke
+webgunea zerbitzari batean argitaratzean.
+
+## 7. Taulak
+
+Datuak errenkada eta zutabeetan antolatzeko, HTMLko taulak erabiltzen
+dira:
+
+-   **`<table>`**: taula sortzen du.
+-   **`<thead>`**: taularen goiburuko errenkadak biltzen ditu.
+-   **`<tbody>`**: taularen datuak biltzen ditu.
+-   **`<tr>`**: errenkada bat adierazten du.
+-   **`<th>`**: goiburuko gelaxka bat adierazten du.
+-   **`<td>`**: datu arrunt baten gelaxka adierazten du.
+
+Adibideetan, taulak `data-table` klasea dauka:
+
+``` html
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Elementua</th>
+      <th>Informazioa</th>
+      <th>Argazkia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Adibidea</td>
+      <td>Azalpena</td>
+      <td>Irudia</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+Taulak informazioa modu ordenatuan konparatzeko edo aurkezteko balio du.
+
+## 8. CSS eta `class` atributua
+
+CSS erabiltzen da webgunearen itxura zehazteko: koloreak, neurriak,
+ertzak, tarteak eta elementuen kokapena, besteak beste.
+
+HTML elementu bati **`class`** atributua gehitzen zaio estilo jakin bat
+aplikatzeko. Adibidez:
+
+``` html
+<table class="data-table">
+```
+
+CSS fitxategian, klase hori puntu batekin idazten da:
+
+``` css
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: black;
 }
 ```
 
-### B. Kutxa-Eredua (Box Model)
-Elementu bakoitzaren neurriak eta espazioak doitzeko kutxa-ereduaren propietate nagusiak erabili dira:
-- `box-sizing: border-box`: Elementu guztietan ezarrita neurrien kalkulua zehatza izan dadin (`*`, `*::before`, `*::after`).
-- `margin`: Txartelen, atalen eta taulen arteko kanpo-banaketa kontrolatzeko.
-- `padding`: Edukiaren eta ertzen arteko barne-tartea ziurtatzeko (adibidez, txarteletan `padding: 20px`).
-- `border` eta `border-radius`: Ertz finak (`border: 1px solid var(--ertza)`) eta ertz biribilduak (`border-radius: var(--borobila)`).
+Kode horretan:
 
-### C. Diseinu Moldagarria (Flexbox eta Grid)
-- **Flexbox (`display: flex`):** Nabigazio-menuan, orri-oinean eta zutabe anitzeko banaketetan erabili da elementuak lerrokatzeko.
-- **CSS Grid (`display: grid`):** Txartelen sareta dinamikoetan (`grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))`), pantailaren zabalerara automatikoki egokitzen dena.
-- **Media Queries (`@media (max-width: 768px)`):** Pantaila txikietan (mugikorrak) menua zutabe bertikalean jartzen da eta alboko gortinak ezkutatzen dira irakurgarritasuna lehenesteko.
+-   `width: 100%` propietateak taulari edukiontziaren zabalera osoa
+    hartzeko esaten dio.
+-   `border-collapse: collapse` propietateak taularen gelaxken ertzak
+    elkartzen ditu.
+-   `background: black` propietateak atzeko planoa beltz jartzen du.
 
-### D. Karrusela (CSS Purua)
-Hasierako orriko karrusela JavaScript liburutegirik gabe programatu da, CSS `@keyframes` animazioen bidez, errendimendu handiagoa lortzeko.
+Klaseek estilo bera elementu bati baino gehiagori aplikatzea
+ahalbidetzen dute. Klase baten izena HTMLn eta CSSn berdin idatzi behar
+da.
 
----
+## 9. Oina eta harremanetarako informazioa
 
-## 4. Irisgarritasuna (Web Accessibility)
+**`<footer>`** elementua orriaren behealdeko informazioa biltzeko
+erabiltzen da. Adibideetan, harremanetarako datuak eta taldeari edo
+ikasleei buruzko informazioa agertzen dira.
 
-Webguneak irisgarritasun unibertsalaren oinarriak betetzen ditu:
-1. **Hizkuntza deklarazioa:** `html lang="eu"` orri guztietan.
-2. **Jauzi-esteka (`.skip-link`):** Teklatu bidez nabigatzen duten pertsonek menua saltatu eta zuzenean eduki nagusira joateko aukera (`href="#edukia"`).
-3. **Foku ikusgarria (`:focus-visible`):** Teklatuko `Tab` tekla sakatzean urre koloreko eskema garbia erakusten da.
-4. **Kontraste handia:** Letra argiak (`#f2f2f2` eta `#e8b04a`) hondo ilunaren gainean (`#000` eta `#1f1f1f`).
-5. **Formularioko etiketak:** Eremu bakoitzak bere `<label for="...">` lotura esplizitua du.
-6. **Mugimendu murriztua:** `@media (prefers-reduced-motion: reduce)` errespetatzen da animazioak geldiaraziz.
+Helbide elektroniko bati esteka egiteko, `mailto:` erabil daiteke;
+telefono-zenbaki bati deitzeko esteka egiteko, berriz, `tel:`:
+
+``` html
+<a href="mailto:adibidea@posta.eus">Bidali posta elektronikoa</a>
+<a href="tel:+34123456789">Deitu</a>
+```
+
+Adibideko helbideak ordezkatu egin behar dira webgunean benetako
+harremanetarako datuak jarri behar badira.
+
+## 10. Fitxategien antolaketa eta argitaratzea
+
+Webguneak HTML fitxategiak, CSS fitxategia eta irudien karpeta izan
+ditzake. Fitxategien arteko bideak zuzenak direla egiaztatu behar da.
+
+Webgunea GitHub Pages bezalako zerbitzu batean argitaratzean, kontuan
+hartu beharrekoak:
+
+1.  Esteketako fitxategi-izenak benetako izenekin bat etortzea.
+2.  Letra larriak eta xeheak errespetatzea.
+3.  Irudien karpetaren eta fitxategien bideak zuzenak izatea.
+4.  HTML orriek CSS fitxategia behar bezala lotuta edukitzea.
+5.  Nabigazio-menuan estekatutako orri guztiak biltegian egotea.
+
+Ordenagailuan lokalki funtzionatzen duen orri batek akatsak izan ditzake
+argitaratutako bertsioan, fitxategi-izenak edo bideak ez badatoz bat
+zehazki.
