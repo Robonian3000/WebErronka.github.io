@@ -3,7 +3,7 @@
 **Egilea:** Iñigo (4. Taldea)  
 **Zerbitzariaren Izena (Hostname):** `Artaburu`  
 **Sistema Eragilea:** Windows Server  
-**IP Helbidea:** `192.168.70.9`  
+**IP Helbidea:** `192.168.4.4`  
 **Web Zerbitzaria:** Internet Information Services (IIS) — RAID 5 biltegiratzean kokatua  
 
 ---
@@ -41,9 +41,9 @@ Proiekturako **VMware Workstation** birtualizazio-ingurunea erabili da. Sare-kom
 
 Errubrikaren jarraibideak jarraituz, ekipoari **`Artaburu`** izen ofiziala ezarri zaio eta IP helbideratze estatikoa konfiguratu da:
 * **Ekipoaren izena (Hostname):** `Artaburu`
-* **IP helbidea:** `192.168.70.9`
+* **IP helbidea:** `192.168.4.4`
 * **Azpisare-maskara:** `255.255.255.0`
-* **Atebidea (Gateway):** `192.168.70.1`
+* **Atebidea (Gateway):** `192.168.4.1`
 
 | Ekipoaren Izena (Artaburu) | IP Konfigurazioa |
 | :---: | :---: |
@@ -99,7 +99,7 @@ Datu-bolumenean `Enpresa_Datuak` karpeta sortu da eta herentzia desgaitu, ondore
 ### 3.4. Web Zerbitzaria (IIS) eta RAID 5-ra Lotura
 1. **IIS (Internet Information Services)** rola instalatu da zerbitzarian.
 2. Webgunearen karpeta nagusia (`Default Web Site`) disko lokaletik (`C:\`) **RAID 5 bolumenera (`H:\Web_Enpresa`)** bideratu da. Horrela, web-orria hardware-akatsen aurrean babestuta dago.
-3. Sare lokaleko beste gailu batetik (portatila / mugikorra) `http://192.168.70.9` atzituz webgunea behar bezala zerbitzatzen dela frogatu da.
+3. Sare lokaleko beste gailu batetik (portatila / mugikorra) `http://192.168.4.4` atzituz webgunea behar bezala zerbitzatzen dela frogatu da.
 
 | IIS Rola Instalatuta | Bide Fisikoa RAID 5-ean |
 | :---: | :---: |
