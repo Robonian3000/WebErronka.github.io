@@ -146,7 +146,7 @@ Divisorea: **`1 1 0 1 1 1 1`** (7 bit, beraz $k = 6$ zero gehituko zaizkio mezua
 Bitarrezko seinalea sareko euskarri fisikotik (uhin bidez edo kablez) garraiatzeko seinale garraiatzaile baten parametroak modulatzen dira:
 
 ```
-Mezua:  | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+Mezua:  | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
 ```
 
 1. **ASK (Amplitude Shift Keying - Anplitude Modulazioa):**
@@ -180,19 +180,25 @@ Datu-loturaren geruzan seinale digitala sinkronizatzeko **Manchester kodifikazio
 
 <br>
 
-- **argazkiko lehen grafikoa manchester-a da**
-- **argazkiko bigarren grafikoa clock-a da**
-- **argazkiko hirugarren grafikoa diferentziala da**
+- **HAU MANCHESTER NORMALA DA**
 ![Manchester](<Argazkiak sarea/MANCHESTER.jpeg>)
+
+<br>
+
+- **HAU MANCHESTER DIFERENTZIALA DA**
+![Manchester](<Argazkiak sarea/diferentzial.jpeg>)
+
+
+
 ---
 
 ## 6. Haririk Gabeko Egiaztapena (Wi-Fi Proba)
 
 Rúbrikaren gutxieneko baldintza betez, sareko azpiegitura hari gabeko gailu baten bidez probatu da:
-1. Gelako Wi-Fi sarbide-puntua (Access Point) switch-eko ataka batera konektatu da.
-2. Telefono mugikor bat konektatu da Wi-Fi sare horretara, DHCP bidez `192.168.70.x` segmentuko IP bat jasoz.
+1. Router bat jarri dugu gure taldeko izenarekin eta pasahitz batetik, bertatik ikusi da gure web horria
+2. Telefono mugikor bat konektatu da Wi-Fi sare horretara, DHCP bidez `192.168.4.x` segmentuko IP bat jasoz.
 3. Mugikorreko nabigatzailean Windows Serverreko IIS zerbitzariaren IP helbidea sartu da:
    ```
-   http://192.168.70.9
+   http://192.168.4.4
    ```
 4. Webgunea arrakastaz kargatu da mugikorrean, sareko kableatu fisikoa, kommutazioa, Wi-Fi bideratzea eta zerbitzariaren web-ostalaritza (IIS) elkarrekin modu egokian komunikatzen direla frogatuz.
