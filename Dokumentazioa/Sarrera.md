@@ -1,5 +1,18 @@
 # 1. Erronka: Informazioaren Digitalizazio Webgunea
-
+<header class="site-header">
+        <div class="header-inner">
+            <nav aria-label="Menu nagusia">
+                <ul class="nav-list">
+                    <li><a href="Sarrera.md">Hasiera</a></li>
+                    <li><a href="Datu base.md">Datu-basea</a></li>
+                    <li><a href="Sarea.md">Sareak</a></li>
+                    <li><a href="sistemak.md">Zerbitzaria</a></li>
+                    <li><a href="Digitalizazioa.md">Digitalizazioa</a></li>
+                    <li><a href="Markatze lengoaia.md">Markatze lengoaiak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 **Taldea:** 4. Taldea  
 **Zikloa:** Sareko Informatika Sistemen Administrazioa (SISA 1) &mdash; 1. Maila  
 **Ikastetxea:** Uni Eibar-Ermua  
