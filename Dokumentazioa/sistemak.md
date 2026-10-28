@@ -5,6 +5,7 @@
 **Sistema Eragilea:** Windows Server  
 **IP Helbidea:** `192.168.4.4`  
 **Web Zerbitzaria:** Internet Information Services (IIS) — RAID 5 biltegiratzean kokatua  
+**DNS Zerbitzua:** `http://www.artaburu.eus` | Honek funtzionatzeko zure ekipoan gure Windowseko IP-a jarri behar duzu zure lehenengo DNS-an
 
 ---
 
