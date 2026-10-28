@@ -76,8 +76,16 @@ flowchart LR
    - Patch panel-ak ikasgelako hormetako eta mahaietako hartuneak antolatzen ditu. Bertatik latigillo laburren bidez switch-eko ataketara bideratzen dira konexioak, mantentze-lanak erraztuz.
 
 ---
+## 2. Gure sareegitura
 
-## 2. Pasahitzaren ASCII Kodifikazioa
+Guk sortu dugun sare egituraren diagrama da hau, bertan Gure zerbitzaria dago eta beste bat simulatzen gure web orria, bi hauek switch batekin daude konektatuta eta switch hori erdiko switchera doa. Beste aldean switch batekin konektatuta 3 ordenagailu bezero daude, bakoitza bere ip arekin.
+![sareegitura](<Argazkiak sarea/Captura de pantalla (1).png>)
+
+
+
+---
+
+## 3. Pasahitzaren ASCII Kodifikazioa
 
 Windows Serverreko segurtasun-politikan ezarritako pasahitz konplexua hartu da oinarritzat: **`Admin123@`**.  
 Pasahitz honek gutxieneko 8 karaktere, maiuskulak, minuskulak, zenbakiak eta ikur berezi bat ditu.
@@ -103,7 +111,7 @@ ASCII kode estandarraren arabera (8 bit / karaktere bakoitzeko), ondorengo bihur
 
 ---
 
-## 3. CRC-6-GSM Errore-Detekzioaren Kalkulua
+## 4. CRC-6-GSM Errore-Detekzioaren Kalkulua
 
 Transmisioan gerta daitezkeen erroreak hautemateko, erredundantzia ziklikoaren kodeketa (**CRC - Cyclic Redundancy Check**) aplikatu da, GSM estandarreko 6 graduko polinomioa erabiliz.
 
@@ -141,7 +149,7 @@ Divisorea: **`1 1 0 1 1 1 1`** (7 bit, beraz $k = 6$ zero gehituko zaizkio mezua
 
 ---
 
-## 4. Modulazio Digitalak (ASK, FSK, PSK)
+## 5. Modulazio Digitalak (ASK, FSK, PSK)
 
 Bitarrezko seinalea sareko euskarri fisikotik (uhin bidez edo kablez) garraiatzeko seinale garraiatzaile baten parametroak modulatzen dira:
 
@@ -170,7 +178,7 @@ Mezua:  | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 
 
 ---
 
-## 5. Manchester Lerro-Kodetzea
+## 6. Manchester Lerro-Kodetzea
 
 Datu-loturaren geruzan seinale digitala sinkronizatzeko **Manchester kodifikazioa** erabiltzen da (Ethernet sareen oinarria):
 - **Trantsizio araua:** Bit bakoitzaren erdian beti trantsizio bat gertatzen da. Horri esker, igorlearen eta hartzailearen erlojuak automatikoki sinkronizatuta mantentzen dira.
@@ -192,7 +200,7 @@ Datu-loturaren geruzan seinale digitala sinkronizatzeko **Manchester kodifikazio
 
 ---
 
-## 6. Haririk Gabeko Egiaztapena (Wi-Fi Proba)
+## 7. Haririk Gabeko Egiaztapena (Wi-Fi Proba)
 
 Rúbrikaren gutxieneko baldintza betez, sareko azpiegitura hari gabeko gailu baten bidez probatu da:
 1. Router bat jarri dugu gure taldeko izenarekin eta pasahitz batetik, bertatik ikusi da gure web horria
