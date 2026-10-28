@@ -4,8 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
-    color: white;
-    background-color: black;
+    color: black;
     background-image: url("argazkiak/cortina_izquierda.jpg"), url("argazkiak/cortina_derecha.jpg");
     background-position: left top, right top;
     background-repeat: no-repeat;
@@ -17,10 +16,10 @@ img {
     max-height: 1000px;
 }
 
-a { color: #fff; }
+a { color: black; }
 
 .site-header {
-    background: #9b2929;
+    background: #c13e3e;
     border-bottom: 3px solid rgb(140, 35, 35);
 }
 
@@ -65,7 +64,7 @@ a { color: #fff; }
 .data-table {
     width: 100%;
     border-collapse: collapse;
-    background: black;
+    background: white;
     margin-top: 20px;
     margin-bottom: 20px;
 }
