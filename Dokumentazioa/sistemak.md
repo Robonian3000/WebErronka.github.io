@@ -1,28 +1,24 @@
 ﻿# 3. Sistema Eragileen Ezartzea (SISA 1 — 1. Erronka)
-<header class="site-header">
-        <div class="header-inner">
-            <nav aria-label="Menu nagusia">
-                <ul class="nav-list">
-                    <li><a href="Sarrera.md">Hasiera</a></li>
-                    <li><a href="Datu base.md">Datu-basea</a></li>
-                    <li><a href="sarea.md">Sareak</a></li>
-                    <li><a href="sistemak.md">Zerbitzaria</a></li>
-                    <li><a href="Digitalizazioa.md">Digitalizazioa</a></li>
-                    <li><a href="Markatze lengoaia.md">Markatze lengoaiak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+## Navegazioa
+
+- [Sarrera](Sarrera.md)
+- [Datu base](Datu-base.md)
+- [Digitalizazio](Digitalizazioa.md)
+- [Markatze lengoaia](Markatze-lengoaia.md)
+- [Sarea](sarea.md)
+- [Sistemak](sistemak.md)
+
+---
+
+## 1. Sistema Eragileen Oinarri Teorikoak
+
+
 **Egilea:** Iñigo (4. Taldea)  
 **Zerbitzariaren Izena (Hostname):** `Artaburu`  
 **Sistema Eragilea:** Windows Server  
 **IP Helbidea:** `192.168.4.4`  
 **Web Zerbitzaria:** Internet Information Services (IIS) — RAID 5 biltegiratzean kokatua  
 **DNS Zerbitzua:** `http://www.artaburu.eus` | Honek funtzionatzeko zure ekipoan gure Windowseko IP-a jarri behar duzu zure lehenengo DNS-an
-
----
-
-## 1. Sistema Eragileen Oinarri Teorikoak
 
 ### 1.1. Sistema Eragileen Funtzioak
 Sistema eragilea (SE) ordenagailu baten hardwarearen eta erabiltzailearen (zein aplikazioen) arteko bitartekaria da. Bere funtzio nagusiak hauek dira:
