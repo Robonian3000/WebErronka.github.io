@@ -5,7 +5,7 @@
                 <ul class="nav-list">
                     <li><a href="Sarrera.md">Hasiera</a></li>
                     <li><a href="Datu base.md">Datu-basea</a></li>
-                    <li><a href="Sarea.md">Sareak</a></li>
+                    <li><a href="sarea.md">Sareak</a></li>
                     <li><a href="sistemak.md">Zerbitzaria</a></li>
                     <li><a href="Digitalizazioa.md">Digitalizazioa</a></li>
                     <li><a href="Markatze lengoaia.md">Markatze lengoaiak</a></li>
