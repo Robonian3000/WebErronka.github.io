@@ -18,12 +18,12 @@ img {
 
 a { color: black; }
 
-.site-header {
+.fondo-header {
     background: #c13e3e;
     border-bottom: 3px solid rgb(140, 35, 35);
 }
 
-.header-inner {
+.header {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
@@ -37,31 +37,31 @@ a { color: black; }
     font-weight: bold;
 }
 
-.nav-list {
+.navegacion {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-.nav-list a {
+.navegacion a {
     padding: 12px;
     text-decoration: none;
     transition: background-color .3s;
 }
 
-.nav-list a:hover,
-.nav-list a:focus-visible { 
+.navegacion a:hover,
+.navegacion a:focus-visible { 
     background: rgb(140, 35, 35); 
 }
 
-.page {
+.pagina {
     width: min(1000px, calc(100% - 30vw));
     margin: 30px auto;
     padding: 30px;
 }
 
-.data-table {
+.tabla {
     width: 100%;
     border-collapse: collapse;
     background: white;
@@ -69,13 +69,13 @@ a { color: black; }
     margin-bottom: 20px;
 }
 
-.data-table th,
-.data-table td {
+.tabla th,
+.tabla td {
     padding: 12px;
     border: 1px solid grey;
 }
 
-.footer-inner {
+.footer {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;

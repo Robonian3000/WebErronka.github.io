@@ -9,11 +9,11 @@
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="header-inner">
+    <header class="fondo-header">
+        <div class="header">
             <a class="tituloa" href="sarrera.html">Artaburu prime video</a>
             <nav aria-label="Menu nagusia">
-                <ul class="nav-list">
+                <ul class="navegacion">
                     <li><a href="sarrera.html" aria-current="page">Hasiera</a></li>
                     <li><a href="datu-base.html">Datu-basea</a></li>
                     <li><a href="Sarea.html">Sareak</a></li>
@@ -25,10 +25,9 @@
         </div>
     </header>
 
-    <main id="edukia" class="page">
+    <main class="pagina">
     <h1>Datu-basea: Streaming Plataforma</h1>
         <h2>1. datu base deskribapena</h2>
-            <article class="card" style="margin-top: 15px;">
                 <p>Streaming plataforma ezagun batek bere datu-basea berritu nahi du. Honako
                     hau da lana egiteko jaso dugun informazioa:</p>
                 <p>buruz honako datu hauek gorde nahi dira: ID-Erabiltzailea, izena,
@@ -56,21 +55,17 @@
                     gain, bere zenbakia gordetzen da. Era berean, denboraldi bakoitzak gutxienez
                     kapitulu asko izango ditu, eta kapitulu bakoitza denboraldi zehatz bati dagokio.
                 </p>
-            </article>
 
         <section>
             <h2>2. ER (entitate relazio) diagrama</h2>
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Gure diagrama:</h3>
-                    <img src="argazkiak/CP-DatuBasea-Erronka1.2.png">
-                </article>
+            <div
+                ><h3>Gure diagrama:</h3>
+                <img src="argazkiak/CP-DatuBasea-Erronka1.2.png">
             </div>
         </section>
 
         <section>
             <h2>3. erlazioanala</h2>
-                <article class="card">
                     <ul>
                         <li>HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)</li>
                         <li>PLANA (ID-Plana, ID-Harpidetza, Oinarrizkoa iragarkiekin, Oinarrizkoa, Premiuma)</li>
@@ -84,13 +79,11 @@
                         <li>DENBORALDIAK (ID-Denboraldia, ID-Edukia, Zenbakia)</li>
                         <li>KAPITULUAK (ID-Kapitulua, ID-Denboraldiak, Izena)</li>
                     </ul>
-                </article>
         </section>
 
         <section>
-            <div class="card-grid">
-                <h2>4. normalizazioa</h2>
-                <article class="card">
+            <div 
+                ></div><h2> 4. normalizazioa</h2>
                 <h3>1. HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)</h3>
                 <ul>
                     <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
@@ -103,7 +96,7 @@
                     <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
                     <li>2FN? Ez, dependentzia partziala dagoelako.</li>
 
-                    <table class="data-table">
+                    <table class="tabla">
                         <tr>
                             <th>ID-plana</th>
                             <th>Oinarrizkoa iragarkiekin, Oinarrizkoa eta Premiuma</th>
@@ -125,7 +118,7 @@
                     <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
                     <li>2FN? Ez, dependentzia partziala dagoelako.</li>
 
-                    <table class="data-table">
+                    <table class="tabla">
                         <tr>
                             <th>ID-Erabiltzailea</th>
                             <th>Izena, Abizena, NAN,Mugikor zenbakia, E-maila</th>
@@ -147,7 +140,7 @@
                     <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
                     <li>2FN? Ez, dependentzia partziala dagoelako.</li>
 
-                    <table class="data-table">
+                    <table class="tabla">
                         <tr>
                             <th>ID-rola</th>
                             <th>Izena</th>
@@ -169,7 +162,7 @@
                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
                     <li>2FN? Ez, dependentzia partziala dagoelako.</li>
 
-                    <table class="data-table">
+                    <table class="tabla">
                         <tr>
                             <th>ID-Izena</th>
                             <th>---</th>
@@ -222,7 +215,7 @@
                     <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
                     <li>2FN? Ez, dependentzia partziala dagoelako.</li>
 
-                    <table class="data-table">
+                    <table class="tabla">
                         <tr>
                             <th>ID-Denboraldia</th>
                             <th>Zenbakia</th>
@@ -244,7 +237,7 @@
                     <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
                     <li>2FN? Ez, dependentzia partziala dagoelako.</li>
 
-                    <table class="data-table">
+                    <table class="tabla">
                         <tr>
                             <th>ID-Kapitulua</th>
                             <th>Izena</th>
@@ -260,12 +253,11 @@
                     </ul>
                     <li>3FN? Bai, “Guztiok” dependentzia funtzional transitiboa ez dagoelako.
                 </ul>
-                </article>
             </div>
         </section>
     </main>
 
-    <footer class="footer-inner">
+    <footer class="footer">
             <section>
                 <h2>Harremanetarako</h2>
                 <address>
