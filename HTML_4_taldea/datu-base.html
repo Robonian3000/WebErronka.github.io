@@ -26,54 +26,240 @@
     </header>
 
     <main id="edukia" class="page">
-        <h1>Datu-basea: Streaming Plataforma</h1>
-
-        <section class="intro-box">
-            <p><strong>Artaburu Prime Video</strong> streaming multimedia zerbitzua kudeatzeko datu-base erlazionalaren azterketa eta inplementazio teknikoa. Plataformak erabiltzaileak, harpidetza-planak, profil anitzak (rolak), ikus-entzunezko edukiak (ISA hierarkia: pelikulak, serieak eta dokumentalak) eta erreprodukzio-historiala (bistaratzeak) kudeatzen ditu.</p>
-        </section>
-
-        <section>
-            <h2>1. ER (entitate relazio) diagrama</h2>
-            <p>Enpresak datuak fitxategi lauetan (Excel, CSV edo testu-fitxategietan) gorde beharrean, <strong>Datu-Baseak Kudeatzeko Sistema (DBKS / RDBMS)</strong> baten bidez kudeatzea erabaki du, ondorengo onura nagusiak bermatuz:</p>
-
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Gure diagrama (foto):</h3>
-                    <img src="argazkiak/placeholder.png">
-                </article>
-            </div>
-
-            <div class="intro-box" style="margin-top: 20px;">
-                <p><strong>Zer gertatuko litzateke datuak modu ez-egokian gordeko balira?</strong><br>
-                Fitxategi arruntetan edo normalizatu gabeko tauletan, <em>txertatze-anomaliak</em> (ezingo litzateke plan berririk sortu bezerorik gabe), <em>aldaketa-anomaliak</em> (datu bat leku batean aldatu eta bestean zaharkituta geratzea) eta <em>ezabatze-anomaliak</em> (bezero bat ezabatzean planaren informazio osoa galtzea) gertatuko lirateke.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>2. Eredu erlazioanal</h2>
+    <h1>Datu-basea: Streaming Plataforma</h1>
+        <h2>1. datu base deskribapena</h2>
             <article class="card" style="margin-top: 15px;">
-                <h3>Gure eredu erlazioanala(foto):</h3>
-                <img src="argazkiak/placeholder.png">
+                <p>Streaming plataforma ezagun batek bere datu-basea berritu nahi du. Honako
+                    hau da lana egiteko jaso dugun informazioa:</p>
+                <p>buruz honako datu hauek gorde nahi dira: ID-Erabiltzailea, izena,
+                    abizena, NAN, telefonoa eta e-maila.</p>
+                <p>Plataformak hainbat plan eskaintzen ditu, eta bakoitzak bere ID-Plana,
+                    oinarrizkoa, oinarrizkoa iragarkiekin eta premiuma. Erabiltzaile bakoitzak
+                    gutxienez plan bat kontratatu behar du zerbitzua erabiltzeko eta noski, plan
+                    bakoitza erabiltzaile askok kontratatuko dute.</p>
+                <p> Plan bakoitzak harpidetza bakarra izaten du lotuta, eta plan bakoitzari gutxienez
+                    harpidetza bat dagokio. Harpidetza bakoitzak bere Id-Harpidetza, hasiera-data
+                    eta amaiera-data izango du. Harpidetza bakoitza plan bakar bat edo gehiagori
+                    egongo da beti lotuta.</p>
+                <p>Erabiltzaile bakoitzak bere kontuaren barruan Rol bat baina gehiago kudeatu
+                    ditzake. Rol-ei buruz informazio hau dugu: ID-Rola, infantila, familiarra eta
+                    pertsonala. Rol bakoitza erabiltzaile bakar bati dagokio.</p>
+                <p> Plataforman mota askotako edukiak daude eskuragarri. Eduki bakoitzari buruz
+                    bere ID-Edukia eta izenburua jakin nahi dira. Edukiak hiru motatakoak izan
+                    daitezke: Serieak, Pelikulak edo Dokumentalak.</p>
+                <p>Rol bakoitzak edukiak bistaratu ditzake. Rol batek gutxienez eduki bat ikusiko
+                    du, eta eduki bakoitza gutxienez rol batek baina gehiago ikusiko du. Rol batek
+                    eduki bat ikusten duen bakoitzean, bistaratze hori erregistratu nahi da, ikustaldi
+                    horren informazioa gordez.</p>
+                <p>Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango
+                    ditu. Denboraldi bakoitza serie bakar batekoa da, eta ID-Denboraldia kodeaz
+                    gain, bere zenbakia gordetzen da. Era berean, denboraldi bakoitzak gutxienez
+                    kapitulu asko izango ditu, eta kapitulu bakoitza denboraldi zehatz bati dagokio.
+                </p>
             </article>
+
+        <section>
+            <h2>2. ER (entitate relazio) diagrama</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Gure diagrama:</h3>
+                    <img src="argazkiak/CP-DatuBasea-Erronka1.2.png">
+                </article>
+            </div>
         </section>
 
         <section>
-            <h2>3. Normalizazio prozesua</h2>
-            <p> Diseinatutako eredu erlazionalak normalizazioaren hiru arau nagusiak zorrotz betetzen dituela bermatu da</p>
+            <h2>3. erlazioanala</h2>
                 <article class="card">
-                    <h3>Gure normalizazioa(foto):</h3>
-                    <img src="argazkiak/placeholder.png">
+                    <ul>
+                        <li>HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)</li>
+                        <li>PLANA (ID-Plana, ID-Harpidetza, Oinarrizkoa iragarkiekin, Oinarrizkoa, Premiuma)</li>
+                        <li>ERABILTZAILEA (ID-Erabiltzailea, ID-Plana, Izena, Abizena, NAN, Mugikor zenbakia, E-maila)</li>
+                        <li>ROLA (ID-Rola, ID-Erabiltzailea, izena)</li>
+                        <li>IKUSI (ID-Izena, ID-Edukia, Bistaratzea)</li>
+                        <li>EDUKIA (ID-Edukia, Izenburua, Mota)</li>
+                        <li>PELIKULAK (Zuzendaria, Iraupena_min)</li>
+                        <li>DOKU (Gaia, Iraupena_min)</li>
+                        <li>SERIEAK</li>
+                        <li>DENBORALDIAK (ID-Denboraldia, ID-Edukia, Zenbakia)</li>
+                        <li>KAPITULUAK (ID-Kapitulua, ID-Denboraldiak, Izena)</li>
+                    </ul>
                 </article>
         </section>
 
         <section>
-            <h2>4. Acces </h2>
-            <p>Microsoft Access aplikazioan inplementazio fisikoa burutzean ondorengo arauak ezarri dira:</p>
-
             <div class="card-grid">
+                <h2>4. normalizazioa</h2>
                 <article class="card">
-                    <h3>1. datu base egitura(foto):</h3>
-                    <img src="argazkiak/placeholder.png">
+                <h3>1. HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Bai, Dependentzia partziala ez dagoelako.</li>
+                    <li>3FN? Bai, Dependentzia funtzional transitiboa ez dagoelako.</li>
+                </ul>
+
+                <h3>2. PLANA (ID-Plana, ID-Harpidetza, Oinarrizkoa iragarkiekin, Oinarrizkoa, Premiuma)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Ez, dependentzia partziala dagoelako.</li>
+
+                    <table class="data-table">
+                        <tr>
+                            <th>ID-plana</th>
+                            <th>Oinarrizkoa iragarkiekin, Oinarrizkoa eta Premiuma</th>
+                        </tr>
+                        <tr>
+                            <td>ID-Harpidetza</td>
+                            <td>---</td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li>ID-Plana (Oinarrizkoa iragarkiekin, Oinarrizkoa eta Premiuma)</li>
+                        <li>PLANA (ID-Plana eta ID-Harpidetza)</li>
+                    </ul>
+                    <li>3FN? Bai, “Guztiok” dependentzia funtzional transitiboa ez dagoelako.
+                </ul>
+
+                <h3>3. ERABILTZAILEA (ID-Erabiltzailea, ID-Plana, Izena, Abizena, NAN, Mugikor zenbakia, E-maila)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Ez, dependentzia partziala dagoelako.</li>
+
+                    <table class="data-table">
+                        <tr>
+                            <th>ID-Erabiltzailea</th>
+                            <th>Izena, Abizena, NAN,Mugikor zenbakia, E-maila</th>
+                        </tr>
+                        <tr>
+                            <td>ID-plana</td>
+                            <td>---</td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li>ID-Erabiltzailea (Izena, Abizena, NAN, Mugikor zenbakia, E-maila)</li>
+                        <li>ERABILTZAILEA (ID-Erabiltzailea eta ID-Plana)</li>
+                    </ul>
+                    <li>3FN? Bai, “Guztiok” dependentzia funtzional transitiboa ez dagoelako.
+                </ul>
+
+                <h3>4. ROLA (ID-Rola, ID-Erabiltzailea, izena)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Ez, dependentzia partziala dagoelako.</li>
+
+                    <table class="data-table">
+                        <tr>
+                            <th>ID-rola</th>
+                            <th>Izena</th>
+                        </tr>
+                        <tr>
+                            <td>ID-erabiltzaile</td>
+                            <td>---</td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li>ID-Rola (Izena)</li>
+                        <li>ROLA (ID-Rola eta ID-Erabiltzailea)</li>
+                    </ul>
+                    <li>3FN? Bai, “Guztiak” Dependentzia funtzional transitiboa ez dagoelako.</li>
+                </ul>
+
+                <h3>5. IKUSI (ID-Izena, ID-Edukia, Bistaratzea)</h3>
+                <ul>
+                   <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Ez, dependentzia partziala dagoelako.</li>
+
+                    <table class="data-table">
+                        <tr>
+                            <th>ID-Izena</th>
+                            <th>---</th>
+                        </tr>
+                        <tr>
+                            <td>ID-Edukia</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>IKUSI</td>
+                            <td>Bistaratzea</td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li>IKUSI (ID-Izena, ID-Edukia eta bistaratzea)</li>
+                    </ul>
+                    <li>3FN? Bai, Dependentzia funtzional transitiboa ez dagoelako.</li>
+                </ul>
+
+                <h3>6. EDUKIA (ID-Edukia, Izenburua, Mota)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Bai, Dependentzia partziala ez dagoelako.</li>
+                    <li>3FN? Bai, Dependentzia funtzional transitiboa ez dagoelako.</li>
+                </ul>
+
+                <h3>7. PELIKULAK (Zuzendaria, Iraupena_min)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Bai, Dependentzia partziala ez dagoelako.</li>
+                    <li>3FN? Bai, Dependentzia funtzional transitiboa ez dagoelako.</li>
+                </ul>
+
+                <h3>8. DOKU (Gaia, Iraupena_min)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Bai, Dependentzia partziala ez dagoelako.</li>
+                    <li>3FN? Bai, Dependentzia funtzional transitiboa ez dagoelako.</li>
+                </ul>
+
+                <h3>9. SERIEAK</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Bai, Dependentzia partziala ez dagoelako.</li>
+                    <li>3FN? Bai, Dependentzia funtzional transitiboa ez dagoelako.</li>
+                </ul>
+
+                <h3>10. DENBORALDIAK (ID-Denboraldia, ID-Edukia, Zenbakia)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Ez, dependentzia partziala dagoelako.</li>
+
+                    <table class="data-table">
+                        <tr>
+                            <th>ID-Denboraldia</th>
+                            <th>Zenbakia</th>
+                        </tr>
+                        <tr>
+                            <td>ID-Edukia</td>
+                            <td>---</td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li>ID-Denboraldia (Zenbakia)</li>
+                        <li>DENBORALDIAK (ID-Denboraldia eta ID-Edukia)</li>
+                    </ul>
+                    <li>3FN? Bai, “Guztiok” dependentzia funtzional transitiboa ez dagoelako.
+                </ul>
+
+                <h3>11. KAPITULUAK (ID-Kapitulua, ID-Denboraldiak, Izena)</h3>
+                <ul>
+                    <li>1FN? Bai, ez dago errepikapenik. Datuak atomikoak dira.</li>
+                    <li>2FN? Ez, dependentzia partziala dagoelako.</li>
+
+                    <table class="data-table">
+                        <tr>
+                            <th>ID-Kapitulua</th>
+                            <th>Izena</th>
+                        </tr>
+                        <tr>
+                            <td>ID-Denboraldiak</td>
+                            <td>---</td>
+                        </tr>
+                    </table>
+                    <ul>
+                        <li>ID-Kapitulua (Izena)</li>
+                        <li>KAPITULUAK (ID-Kapitulua eta ID-Denboraldiak)</li>
+                    </ul>
+                    <li>3FN? Bai, “Guztiok” dependentzia funtzional transitiboa ez dagoelako.
+                </ul>
                 </article>
             </div>
         </section>
