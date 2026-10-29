@@ -1,12 +1,9 @@
-# Webgunearen dokumentazioa
-## Navegazioa
+---
+layout: page
+title: Markatze-lengoaia
+---
 
-- [Sarrera](Sarrera.md)
-- [Datu base](Datu-base.md)
-- [Digitalizazio](Digitalizazioa.md)
-- [Markatze lengoaia](Markatze-lengoaia.md)
-- [Sarea](sarea.md)
-- [Sistemak](sistemak.md)
+
 ## 1. Sarrera
 
 Dokumentu honetan webgunea osatzen duten HTML elementu nagusiak eta

@@ -1,12 +1,6 @@
-# Sareen Planifikazioa eta Kudeaketa: OSI Ereduaren 1. eta 2. Mailak
-## Navegazioa
-
-- [Sarrera](Sarrera.md)
-- [Datu base](Datu-base.md)
-- [Digitalizazio](Digitalizazioa.md)
-- [Markatze lengoaia](Markatze-lengoaia.md)
-- [Sarea](sarea.md)
-- [Sistemak](sistemak.md)
+---
+layout: page
+title: Sareak
 ---
 
 ## 1. Azpiegitura Fisikoa eta OSI Eredua

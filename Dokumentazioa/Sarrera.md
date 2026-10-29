@@ -1,12 +1,7 @@
-# 1. Erronka: Informazioaren Digitalizazio Webgunea
-## Navegazioa
-
-- [Sarrera](Sarrera.md)
-- [Datu base](Datu-base.md)
-- [Digitalizazio](Digitalizazioa.md)
-- [Markatze lengoaia](Markatze-lengoaia.md)
-- [Sarea](sarea.md)
-- [Sistemak](sistemak.md)
+---
+layout: page
+title: Sarrera
+---
 
 **Taldea:** 4. Taldea  
 **Zikloa:** Sareko Informatika Sistemen Administrazioa (SISA 1) &mdash; 1. Maila  

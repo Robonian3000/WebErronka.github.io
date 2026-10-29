@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Produkzio-Sektoreei Aplikatutako Digitalizazioa
+title: Digitalizazioa
 ---
 
 ## 1. Digitalizazioaren Kontzeptua

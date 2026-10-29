@@ -5,7 +5,7 @@ theme: minima
 header_pages:
   - Dokumentazioa/Sarrera.md
   - Dokumentazioa/Datu-base.md
-  - digit.md
-  - sareak.md
-  - markatze.md
-  - sistemaeragileak.md
+  - Dokumentazioa/Digitalizazioa.md
+  - Dokumentazioa/Markatze-lengoaia.md
+  - Dokumentazioa/sarea.md
+  - Dokumentazioa/sistemak.md
