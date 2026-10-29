@@ -25,6 +25,134 @@ Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango di
 ## 2. Eredu Erlazionala:
 ![Diagrama DatuBasea](Argazkiak_Datu-base/erlazionala.png)
 
+# 3. Datu-basearen normalizazioa
+
+## 1. HARPIDETZA
+
+**HARPIDETZA** (`ID-Harpidetza`, `Hasiera_data`, `Amaiera_data`)
+
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Bai, dependentzia partziala ez dagoelako.
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 2. PLANA
+
+**PLANA** (`ID-Plana`, `ID-Harpidetza`, `Mota`)
+
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Ez, dependentzia partziala dagoelako.
+
+Deskonposizioa:
+
+- `ID-Plana` → `Mota`
+- **PLANA** (`ID-Plana`, `ID-Harpidetza`)
+
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 3. ERABILTZAILEA
+
+**ERABILTZAILEA** (`ID-Erabiltzailea`, `ID-Plana`, `Izena`, `Abizena`, `NAN`, `Mugikor zenbakia`, `E-maila`)
+
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Ez, dependentzia partziala dagoelako.
+
+Deskonposizioa:
+
+- `ID-Erabiltzailea` → (`Izena`, `Abizena`, `NAN`, `Mugikor zenbakia`, `E-maila`)
+- **ERABILTZAILEA** (`ID-Erabiltzailea`, `ID-Plana`)
+
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 4. ROLA
+
+**ROLA** (`ID-Rola`, `ID-Erabiltzailea`, `Izena`)
+
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Ez, dependentzia partziala dagoelako.
+
+Deskonposizioa:
+
+- `ID-Rola` → `Izena`
+- **ROLA** (`ID-Rola`, `ID-Erabiltzailea`)
+
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 5. IKUSI
+
+**IKUSI** (`ID-Izena`, `ID-Edukia`, `Bistaratzea`)
+
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Ez, dependentzia partziala dagoelako.
+
+Deskonposizioa:
+
+- **IKUSI** (`ID-Izena`, `ID-Edukia`, `Bistaratzea`)
+
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 6. EDUKIA
+
+**EDUKIA** (`ID-Edukia`, `Izenburua`, `Mota`)
+
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Bai, dependentzia partziala ez dagoelako.
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 7. PELIKULAK
+
+**PELIKULAK** (`Zuzendaria`, `Iraupena_min`)
+
+- `id`: **EDUKI**-ren kanpo-gakoa (`id`)
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Bai, dependentzia partziala ez dagoelako.
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 8. DOKU
+
+**DOKU** (`Gaia`, `Iraupena_min`)
+
+- `id`: **EDUKI**-ren kanpo-gakoa (`id`)
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Bai, dependentzia partziala ez dagoelako.
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 9. SERIEAK
+
+**SERIEAK**
+
+- `id`: **EDUKI**-ren kanpo-gakoa (`id`)
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Bai, dependentzia partziala ez dagoelako.
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 10. DENBORALDIAK
+
+**DENBORALDIAK** (`ID-Denboraldia`, `ID-Edukia`, `Zenbakia`)
+
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Ez, dependentzia partziala dagoelako.
+
+Deskonposizioa:
+
+- `ID-Denboraldia` → `Zenbakia`
+- **DENBORALDIAK** (`ID-Denboraldia`, `ID-Edukia`)
+
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
+## 11. KAPITULUAK
+
+**KAPITULUAK** (`ID-Kapitulua`, `ID-Denboraldiak`, `Izena`)
+
+- **1FN?** Bai, ez dago errepikapenik. Datuak atomikoak dira.
+- **2FN?** Ez, dependentzia partziala dagoelako.
+
+Deskonposizioa:
+
+- `ID-Kapitulua` → `Izena`
+- **KAPITULUAK** (`ID-Kapitulua`, `ID-Denboraldiak`)
+
+- **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
+
 # 1. Taulak eta haien atributuak
 
 ## 1.1. HARPIDETZA
