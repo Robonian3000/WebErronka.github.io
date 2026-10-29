@@ -1,13 +1,6 @@
-﻿# 3. Sistema Eragileen Ezartzea (SISA 1 — 1. Erronka)
-## Navegazioa
-
-- [Sarrera](Sarrera.md)
-- [Datu base](Datu-base.md)
-- [Digitalizazio](Digitalizazioa.md)
-- [Markatze lengoaia](Markatze-lengoaia.md)
-- [Sarea](sarea.md)
-- [Sistemak](sistemak.md)
-
+﻿---
+layout: page
+title: Sistemak
 ---
 
 ## 1. Sistema Eragileen Oinarri Teorikoak

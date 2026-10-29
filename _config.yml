@@ -1,0 +1,11 @@
+title: Erronka 1 - Dokumentazioa
+description: Erronka 1 proiektuaren dokumentazio teknikoa eta ikasgaien laburpena.
+theme: minima
+
+header_pages:
+  - Dokumentazioa/Sarrera.md
+  - Dokumentazioa/Datu-base.md
+  - Dokumentazioa/Digitalizazioa.md
+  - Dokumentazioa/Markatze-lengoaia.md
+  - Dokumentazioa/sarea.md
+  - Dokumentazioa/sistemak.md

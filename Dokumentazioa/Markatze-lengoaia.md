@@ -1,12 +1,9 @@
-# Webgunearen dokumentazioa
-## Navegazioa
+---
+layout: page
+title: Markatze-lengoaia
+---
 
-- [Sarrera](Sarrera.md)
-- [Datu base](Datu-base.md)
-- [Digitalizazio](Digitalizazioa.md)
-- [Markatze lengoaia](Markatze-lengoaia.md)
-- [Sarea](sarea.md)
-- [Sistemak](sistemak.md)
+
 ## 1. Sarrera
 
 Dokumentu honetan webgunea osatzen duten HTML elementu nagusiak eta
@@ -21,17 +18,17 @@ nagusiak hauek dira:
 
 -   **`<header>`**: webgunearen goiko zatia da. Bertan webgunearen izena
     edo marka eta nabigazio-menua agertzen dira.
-    ![header argazkia html](Argazkiak_markatze_lengoaia/header_adibidea.png)
+    ![header argazkia html](Argazkiak_markatze_lengoaia/header.png)
 -   **`<nav>`**: nabigazio-menua biltzen du. Menu horretako estekek
     webguneko beste orri batzuetara eramaten dute.
 -   **`<main>`**: orriaren eduki nagusia gordetzen du.
-    ![main argazkia](Argazkiak_markatze_lengoaia/main_adibidea.png)
+    ![main argazkia](Argazkiak_markatze_lengoaia/main.png)
 -   **`<section>`**: edukia ataletan banatzeko erabiltzen da.
 -   **`<article>`**: bere kabuz uler daitekeen eduki-bloke bat
     antolatzeko erabil daiteke.
 -   **`<footer>`**: orriaren beheko zatia da. Harremanetarako
     informazioa eta taldeari buruzko datuak jartzeko erabiltzen da.
-    ![footer argazkia](Argazkiak_markatze_lengoaia/footer_adibidea.png)
+    ![footer argazkia](Argazkiak_markatze_lengoaia/footer.png)
 
 HTML elementu semantiko horiei esker, kodea antolatuagoa eta ulertzeko
 errazagoa da.
@@ -71,12 +68,12 @@ antolatzeko, `<section>` eta `<article>` elementuak erabiltzen dira.
 Izenburuak hierarkikoki antolatzen dira:
 
 -   **`<h1>`**: orriaren izenburu nagusia da.
-    ![h1 argazkia](Argazkiak_markatze_lengoaia/h1_adibidea.png)
+    ![h1 argazkia](Argazkiak_markatze_lengoaia/h1.png)
 -   **`<h2>`**: atal nagusien izenburuetarako erabiltzen da.
-    ![h2 argazkia](Argazkiak_markatze_lengoaia/h2_adibidea.png)
+    ![h2 argazkia](Argazkiak_markatze_lengoaia/h2.png)
 -   **`<h3>`**: azpiatalak edo maila txikiagoko izenburuak adierazteko
     erabiltzen da.
-    ![h3 argazkia](Argazkiak_markatze_lengoaia/h3_adibidea.png)
+    ![h3 argazkia](Argazkiak_markatze_lengoaia/h3.png)
 
 Izenburu-mailak ordenan erabiltzea komeni da, edukiaren egitura argia
 izan dadin. Adibidez, orri batean `<h1>` bat egon daiteke, eta haren
@@ -119,7 +116,7 @@ Adibidea:
 ``` html
 <img src="argazkiak/12 - NTFS Baimenak1.png" alt="Baimenak">
 ```
-![argazkia adibidea](Argazkiak_markatze_lengoaia/argazkia_adibidea.png)
+![argazkia adibidea](Argazkiak_markatze_lengoaia/imagenes.png)
 
 Irudiak karpeta batean gordetzen badira, `src` atributuko bidea
 karpetaren eta fitxategiaren izenarekin bat etorri behar da.
@@ -161,7 +158,7 @@ Adibideetan, taulak `data-table` klasea dauka:
 ```
 
 Taulak informazioa modu ordenatuan konparatzeko edo aurkezteko balio du.
-![taula argazkia](Argazkiak_markatze_lengoaia/tabla_adibidea.png)
+![taula argazkia](Argazkiak_markatze_lengoaia/tabla.png)
 
 ## 8. CSS eta `class` atributua
 
@@ -172,20 +169,20 @@ HTML elementu bati **`class`** atributua gehitzen zaio estilo jakin bat
 aplikatzeko. Adibidez:
 
 ``` html
-<table class="data-table">
+<table class="table">
 ```
 
 CSS fitxategian, klase hori puntu batekin idazten da:
 
 ``` css
-.data-table {
+table {
   width: 100%;
   border-collapse: collapse;
   background: black;
 }
 ```
-![class argazkia](Argazkiak_markatze_lengoaia/class_en_css_adibidea.png)
-![class argazkia](Argazkiak_markatze_lengoaia/class_en_html_adibidea.png)
+![class argazkia](Argazkiak_markatze_lengoaia/class_en_css.png)
+![class argazkia](Argazkiak_markatze_lengoaia/class_en_html.png)
 
 Kode horretan:
 
