@@ -18,7 +18,7 @@ Rol bakoitzak edukiak bistaratu ditzake. Rol batek gutxienez eduki bat ikusiko d
 
 Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango ditu. Denboraldi bakoitza serie bakar batekoa da, eta ID-Denboraldia kodeaz gain, bere zenbakia gordetzen da. Era berean, denboraldi bakoitzak gutxienez kapitulu asko izango ditu, eta kapitulu bakoitza denboraldi zehatz bati dagokio.
 
-
+![Diagrama DatuBasea](Argazkiak_Datu-base/diagrama.png)
 
 ## 2. Eredu erlazionala
 
