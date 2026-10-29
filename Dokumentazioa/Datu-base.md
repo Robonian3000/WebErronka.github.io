@@ -351,4 +351,3 @@ Deskonposizioa:
 | Izena | Testu laburra | Tamaño del campo = 30; Regla de validación: `*[A-Z]*` |
 
 ![Diagrama DatuBasea](Argazkiak_Datu-base/access-taulak.png)
-![Diagrama DatuBasea](Argazkiak_Datu-base/access-taulak.png)
