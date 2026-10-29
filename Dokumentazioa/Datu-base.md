@@ -1,4 +1,12 @@
 # Datu Baseak:
+## Navegazioa
+
+- [Sarrera](Sarrera.md)
+- [Datu base](Datu-base.md)
+- [Digitalizazio](Digitalizazioa.md)
+- [Markatze lengoaia](Markatze-lengoaia.md)
+- [Sarea](sarea.md)
+- [Sistemak](sistemak.md)
 ---
 
 ## 1. E/R sortu:
