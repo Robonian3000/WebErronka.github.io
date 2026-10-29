@@ -27,7 +27,7 @@ Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango di
 
 # 3. Datu-basearen normalizazioa
 
-## 1. HARPIDETZA
+## 3.1 HARPIDETZA
 
 **HARPIDETZA** (`ID-Harpidetza`, `Hasiera_data`, `Amaiera_data`)
 
@@ -35,7 +35,7 @@ Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango di
 - **2FN?** Bai, dependentzia partziala ez dagoelako.
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 2. PLANA
+## 3.2 PLANA
 
 **PLANA** (`ID-Plana`, `ID-Harpidetza`, `Mota`)
 
@@ -49,7 +49,7 @@ Deskonposizioa:
 
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 3. ERABILTZAILEA
+## 3.3 ERABILTZAILEA
 
 **ERABILTZAILEA** (`ID-Erabiltzailea`, `ID-Plana`, `Izena`, `Abizena`, `NAN`, `Mugikor zenbakia`, `E-maila`)
 
@@ -63,7 +63,7 @@ Deskonposizioa:
 
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 4. ROLA
+## 3.4 ROLA
 
 **ROLA** (`ID-Rola`, `ID-Erabiltzailea`, `Izena`)
 
@@ -77,7 +77,7 @@ Deskonposizioa:
 
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 5. IKUSI
+## 3.5 IKUSI
 
 **IKUSI** (`ID-Izena`, `ID-Edukia`, `Bistaratzea`)
 
@@ -90,7 +90,7 @@ Deskonposizioa:
 
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 6. EDUKIA
+## 3.6 EDUKIA
 
 **EDUKIA** (`ID-Edukia`, `Izenburua`, `Mota`)
 
@@ -98,7 +98,7 @@ Deskonposizioa:
 - **2FN?** Bai, dependentzia partziala ez dagoelako.
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 7. PELIKULAK
+## 3.7 PELIKULAK
 
 **PELIKULAK** (`Zuzendaria`, `Iraupena_min`)
 
@@ -107,7 +107,7 @@ Deskonposizioa:
 - **2FN?** Bai, dependentzia partziala ez dagoelako.
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 8. DOKU
+## 3.8 DOKU
 
 **DOKU** (`Gaia`, `Iraupena_min`)
 
@@ -116,7 +116,7 @@ Deskonposizioa:
 - **2FN?** Bai, dependentzia partziala ez dagoelako.
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 9. SERIEAK
+## 3.9 SERIEAK
 
 **SERIEAK**
 
@@ -125,7 +125,7 @@ Deskonposizioa:
 - **2FN?** Bai, dependentzia partziala ez dagoelako.
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 10. DENBORALDIAK
+## 3.10 DENBORALDIAK
 
 **DENBORALDIAK** (`ID-Denboraldia`, `ID-Edukia`, `Zenbakia`)
 
@@ -139,7 +139,7 @@ Deskonposizioa:
 
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-## 11. KAPITULUAK
+## 3.11 KAPITULUAK
 
 **KAPITULUAK** (`ID-Kapitulua`, `ID-Denboraldiak`, `Izena`)
 
@@ -153,20 +153,20 @@ Deskonposizioa:
 
 - **3FN?** Bai, dependentzia funtzional transitiboa ez dagoelako.
 
-# 1. Taulak eta haien atributuak
+# 4. Taulak eta haien atributuak
 
-## 1.1. HARPIDETZA
+## 4.1 HARPIDETZA
 
 - `ID-HARPIDETZA` — Gako nagusia (PK)
 - `Hasiera_data`
 - `Amaiera_data`
 
-## 1.2. PLANA
+## 4.2 PLANA
 
 - `ID-PLANA` — Gako nagusia (PK)
 - `Mota`
 
-## 1.3. ERABILTZAILEA
+## 4.3 ERABILTZAILEA
 
 - `ID-Erabiltzailea` — Gako nagusia (PK)
 - `Izena`
@@ -175,53 +175,53 @@ Deskonposizioa:
 - `Mugikor zenbakia`
 - `Email-a`
 
-## 1.4. ROL
+## 4.4 ROL
 
 - `ID_ROLA` — Gako nagusia (PK)
 - `Izena`
 
-## 1.5. IKUSI
+## 4.5 IKUSI
 
 - `ID_IZENA` — Gako nagusia (PK)
 - `Bistaratzea`
 
-## 1.6. EDUKIA
+## 4.6 EDUKIA
 
 - `ID_EDUKIA` — Gako nagusia (PK)
 - `Izenburua`
 - `Mota`
 
-## 1.7. PELIKULAK
+## 4.7 PELIKULAK
 
 - `ID_EDUKIAK` — Gako nagusia (PK, heredatua)
 - `Zuzendaria`
 - `Iraupena_min`
 
-## 1.8. DOKU
+## 4.8 DOKU
 
 - `ID_EDUKIAK` — Gako nagusia (PK, heredatua)
 - `Gaia`
 - `Iraupena_min`
 
-## 1.9. SERIEAK
+## 4.9 SERIEAK
 
 - `ID_EDUKIAK` — Gako nagusia (PK, heredatua)
 
-## 1.10. DENBORALDIAK
+## 4.10 DENBORALDIAK
 
 - `ID_DENBORALDIAK` — Gako nagusia (PK)
 - `Zenbakia`
 
-## 1.11. KAPITULUAK
+## 4.11 KAPITULUAK
 
 - `ID_KAPITULUAK` — Gako nagusia (PK)
 - `Izena`
 
 
-# 2. Taulen gako nagusiak (PK) eta kanpo-gakoak (FK)
+# 5. Taulen gako nagusiak (PK) eta kanpo-gakoak (FK)
 
 - **Gako nagusia (PK):** taula bateko erregistro bakoitza modu bakarrean identifikatzeko erabiltzen da. Ezin da errepikatu.
-- **Kanpo-gakoa (FK):** beste taula bateko gako nagusiarekiko lotura ezartzeko erabiltzen da. Honi esker, taulen arteko erlazioak sor daitezke.
+- **Kanpo-gakoa (FK):** beste taula bateko gako nagusiarekiko lotura egiteko erabiltzen da. Honi esker, taulen arteko erlazioak sor daitezke.
 
 | Taula | Gako nagusia (PK) | Kanpo-gakoa(k) (FK) |
 |---|---|---|
@@ -237,7 +237,7 @@ Deskonposizioa:
 | DENBORALDIAK | ID-DENBORALDIA | ID-EDUKIAK |
 | KAPITULUAK | ID-KAPITULUA | ID-DENBORALDIA |
 
-# 3. Taulen arteko erlazioak
+# 6. Taulen arteko erlazioak
 
 - **1:1:** taula bateko erregistro bakoitza beste taulako erregistro bakar batekin lotzen da.
 - **1:N:** taula bateko erregistro bat beste taulako hainbat erregistrotara lot daiteke.
@@ -256,9 +256,11 @@ Deskonposizioa:
 | SERIEAK – DENBORALDIAK | ID-EDUKIAK | 1:N |
 | DENBORALDIAK – KAPITULUAK | ID-DENBORALDIA | 1:N |
 
-# 4. Access-eko taulen atributuen propietateak
+![Diagrama DatuBasea](Argazkiak_Datu-base/access-erlazioa.png)
 
-## 4.1. HARPIDETZA
+# 7. Access-eko taulen atributuen propietateak
+
+## 7.1 HARPIDETZA
 
 | Eremuaren izena | Datu mota | Propietateak |
 |---|---|---|
@@ -266,7 +268,7 @@ Deskonposizioa:
 | Hasiera-data | Data/Ordua | Formatua: Fecha corta |
 | Amaiera-data | Data/Ordua | Formatua: Fecha corta |
 
-## 4.2. PLANA
+## 7.2 PLANA
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
@@ -274,7 +276,7 @@ Deskonposizioa:
 | ID-HARPIDETZA | Zenbakia | |
 | Mota | Testu laburra | Bilaketa-laguntzailea: Estandar edo Premium |
 
-## 4.3. ERABILTZAILEA
+## 7.3 ERABILTZAILEA
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
@@ -286,7 +288,7 @@ Deskonposizioa:
 | Email-a | Testu laburra | Regla de validación: `@` |
 | Mugikor zenbakia | Testu laburra | Mascara de entrada: `\(009") "900\ 00\ 00;;_` |
 
-## 4.4. PERFIL
+## 7.4 PERFIL
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
@@ -294,7 +296,7 @@ Deskonposizioa:
 | ID-Erabiltzailea | Zenbakia | |
 | Mota | Testu laburra | Tamaño del campo = 30 |
 
-## 4.5. IKUSI
+## 7.5 IKUSI
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
@@ -302,7 +304,7 @@ Deskonposizioa:
 | ID_EDUKIAK | Zenbakia | |
 | Bistaratzea | Bai/Ez | |
 
-## 4.6. EDUKIAK
+## 7.6 EDUKIAK
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
@@ -310,7 +312,7 @@ Deskonposizioa:
 | Izenburua | Testu laburra | Regla de validación: `*[A-Z]*` |
 | Mota | Testu laburra | |
 
-## 4.7. PELIKULAK
+## 7.7 PELIKULAK
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
@@ -318,7 +320,7 @@ Deskonposizioa:
 | Zuzendaria | Testu laburra | Tamaño del campo = 30 |
 | Iraupena_min | Data/Ordua | Mascara de entrada: `99:00:00;0;_` |
 
-## 4.8. DOKUMENTALAK
+## 7.8 DOKUMENTALAK
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
@@ -326,13 +328,13 @@ Deskonposizioa:
 | Gaia | Testu laburra | |
 | Iraupena_min | Data/Ordua | Mascara de entrada: `99:00:00;0;_` |
 
-## 4.9. SERIEAK
+## 7.9 SERIEAK
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
 | ID_EDUKIAK | Zenbakia | |
 
-## 4.10. DENBORALDIAK
+## 7.10 DENBORALDIAK
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
@@ -340,10 +342,12 @@ Deskonposizioa:
 | ID_EDUKIAK | Zenbakia | |
 | Zenbakia | Zenbakia | Valor predeterminado: 1 |
 
-## 4.11. KAPITULUAK
+## 7.11 KAPITULUAK
 
 | Eremuaren izena | Datu mota | Deskribapena |
 |---|---|---|
 | ID_KAPITULUA | Autonumerazioa | |
 | ID_DENBORALDIA | Zenbakia | |
 | Izena | Testu laburra | Tamaño del campo = 30; Regla de validación: `*[A-Z]*` |
+
+![Diagrama DatuBasea](Argazkiak_Datu-base/access-taulak.png)
