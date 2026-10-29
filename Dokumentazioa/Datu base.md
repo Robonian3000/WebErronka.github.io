@@ -21,19 +21,131 @@ Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango di
 ![Diagrama DatuBasea](Argazkiak_Datu-base/diagrama.png)
 
 ## 2. Eredu erlazionala
-•	HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)
-•	PLANA (ID-Plana, ID-Harpidetza, Mota)
-•	ERABILTZAILEA (ID-Erabiltzailea, ID-Plana, Izena, Abizena, NAN, Mugikor zenbakia, E-maila)
-•	ROLA (ID-Rola, ID-Erabiltzailea, izena)
-•	IKUSI (ID-Izena, ID-Edukia, Bistaratzea)
-•	EDUKIA (ID-Edukia, Izenburua, Mota)
-•	PELIKULAK (ID-Edukia, Zuzendaria, Iraupena_min)
-•	DOKU (ID-Edukia, Gaia, Iraupena_min)
-•	SERIEAK(ID-Edukia)
-•	DENBORALDIAK (ID-Denboraldia, ID-Edukia, Zenbakia)
-•	KAPITULUAK (ID-Kapitulua, ID-Denboraldiak, Izena)
-
+![Erlazionala](Argazkiak_Datu-base/erlazionala.png)
 
 ## 3. Datu-basearen normalizazioa
 
+## 1. HARPIDETZA
+
+**Eskema:** `HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)`
+
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Bai. Dependentzia partzialik ez dago.
+- **3FN:** Bai. Dependentzia funtzional transitiborik ez dago.
+
+## 2. PLANA
+
+**Hasierako eskema:** `PLANA (ID-Plana, ID-Harpidetza, Mota)`
+
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Ez. Dependentzia partziala dago.
+
+**Deskonposizioa:**
+
+- `ID-Plana → Mota`
+- `PLANA (ID-Plana, ID-Harpidetza)`
+
+**3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 3. ERABILTZAILEA
+
+**Hasierako eskema:** `ERABILTZAILEA (ID-Erabiltzailea, ID-Plana, Izena, Abizena, NAN, Mugikor zenbakia, E-maila)`
+
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Ez. Dependentzia partziala dago.
+
+**Deskonposizioa:**
+
+- `ID-Erabiltzailea → Izena, Abizena, NAN, Mugikor zenbakia, E-maila`
+- `ERABILTZAILEA (ID-Erabiltzailea, ID-Plana)`
+
+**3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 4. ROLA
+
+**Hasierako eskema:** `ROLA (ID-Rola, ID-Erabiltzailea, Izena)`
+
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Ez. Dependentzia partziala dago.
+
+**Deskonposizioa:**
+
+- `ID-Rola → Izena`
+- `ROLA (ID-Rola, ID-Erabiltzailea)`
+
+**3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 5. IKUSI
+
+**Hasierako eskema:** `IKUSI (ID-Izena, ID-Edukia, Bistaratzea)`
+
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Ez. Dependentzia partziala dago.
+
+**Deskonposizioa:** `IKUSI (ID-Izena, ID-Edukia, Bistaratzea)`
+
+- **3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 6. EDUKIA
+
+**Eskema:** `EDUKIA (ID-Edukia, Izenburua, Mota)`
+
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Bai. Dependentzia partzialik ez dago.
+- **3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 7. PELIKULAK
+
+**Eskema:** `PELIKULAK (Zuzendaria, Iraupena_min)`
+
+- `id`: `EDUKIKO` taularako kanpo-gakoa (`id`).
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Bai. Dependentzia partzialik ez dago.
+- **3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 8. DOKU
+
+**Eskema:** `DOKU (Gaia, Iraupena_min)`
+
+- `id`: `EDUKIKO` taularako kanpo-gakoa (`id`).
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Bai. Dependentzia partzialik ez dago.
+- **3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 9. SERIEAK
+
+**Eskema:** `SERIEAK`
+
+- `id`: `EDUKIKO` taularako kanpo-gakoa (`id`).
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Bai. Dependentzia partzialik ez dago.
+- **3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 10. DENBORALDIAK
+
+**Hasierako eskema:** `DENBORALDIAK (ID-Denboraldia, ID-Edukia, Zenbakia)`
+
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Ez. Dependentzia partziala dago.
+
+**Deskonposizioa:**
+
+- `ID-Denboraldia → Zenbakia`
+- `DENBORALDIAK (ID-Denboraldia, ID-Edukia)`
+
+**3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
+
+## 11. KAPITULUAK
+
+**Hasierako eskema:** `KAPITULUAK (ID-Kapitulua, ID-Denboraldiak, Izena)`
+
+- **1FN:** Bai. Ez dago errepikapenik; datuak atomikoak dira.
+- **2FN:** Ez. Dependentzia partziala dago.
+
+**Deskonposizioa:**
+
+- `ID-Kapitulua → Izena`
+- `KAPITULUAK (ID-Kapitulua, ID-Denboraldiak)`
+
+**3FN:** Bai. Ez dago dependentzia funtzional transitiborik.
 ## 4. Inplementazioa Access-en
