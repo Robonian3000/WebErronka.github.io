@@ -21,6 +21,18 @@ Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango di
 ![Diagrama DatuBasea](Argazkiak_Datu-base/diagrama.png)
 
 ## 2. Eredu erlazionala
+•	HARPIDETZA (ID-Harpidetza, Hasiera_data, Amaiera_data)
+•	PLANA (ID-Plana, ID-Harpidetza, Mota)
+•	ERABILTZAILEA (ID-Erabiltzailea, ID-Plana, Izena, Abizena, NAN, Mugikor zenbakia, E-maila)
+•	ROLA (ID-Rola, ID-Erabiltzailea, izena)
+•	IKUSI (ID-Izena, ID-Edukia, Bistaratzea)
+•	EDUKIA (ID-Edukia, Izenburua, Mota)
+•	PELIKULAK (ID-Edukia, Zuzendaria, Iraupena_min)
+•	DOKU (ID-Edukia, Gaia, Iraupena_min)
+•	SERIEAK(ID-Edukia)
+•	DENBORALDIAK (ID-Denboraldia, ID-Edukia, Zenbakia)
+•	KAPITULUAK (ID-Kapitulua, ID-Denboraldiak, Izena)
+
 
 ## 3. Datu-basearen normalizazioa
 
