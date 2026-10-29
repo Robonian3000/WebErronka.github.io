@@ -22,6 +22,9 @@ Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango di
 
 ![Diagrama DatuBasea](Argazkiak_Datu-base/diagrama.png)
 
+## 2. Eredu Erlazionala:
+![Diagrama DatuBasea](Argazkiak_Datu-base/erlazionala.png)
+
 # 1. Taulak eta haien atributuak
 
 ## 1.1. HARPIDETZA
