@@ -14,7 +14,7 @@ Plan bakoitzak harpidetza bakarra izaten du lotuta, eta plan bakoitzari gutxiene
 
 Erabiltzaile bakoitzak bere kontuaren barruan Rol bat baina gehiago kudeatu ditzake. Rolei buruz informazio hau dugu: ID-Rola eta mota (Pertsonala, Familiarra eta Infantila). Rol bakoitza erabiltzaile bakar bati dagokio.
 
-Plataforman mota askotako edukiak daude eskuragarri. Eduki bakoitzari buruz bere ID-Edukia eta izenburua jakin nahi dira. Edukiak hiru motatakoak izan daitezke: Serieak, Pelikulak edo Dokumentalak.
+Plataforman mota askotako edukiak daude eskuragarri. Eduki bakoitzari buruz bere ID-Edukia eta izenburua jakin nahi dira. Edukiak hiru motatakoak izan daitezke: Serieak, Pelikulak edo Dokumentalak. Pelikulak barruan zuzendaria eta iraupena_min eta Dokumental-aren barruan gaia (Natura eta animaliak, kirolak, gizartea eta kultura, musika eta artea, biografiak eta krimenak eta ikerketak) eta iraupena_min egon behar dute.
 
 Rol bakoitzak edukiak bistaratu ditzake. Rol batek gutxienez eduki bat ikusiko du, eta eduki bakoitza gutxienez rol batek baino gehiago ikusiko du. Rol batek eduki bat ikusten duen bakoitzean, bistaratze hori erregistratu nahi da, ikustaldi horren informazioa gordez.
 
@@ -85,6 +85,7 @@ Azkenik, serieek egitura berezia dute. Serie bakoitzak denboraldi asko izango di
 
 - `ID_KAPITULUAK` — Gako nagusia (PK)
 - `Izena`
+
 
 # 2. Taulen gako nagusiak (PK) eta kanpo-gakoak (FK)
 
